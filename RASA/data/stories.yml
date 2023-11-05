@@ -1,30 +1,22 @@
 version: "3.1"
 
-stories:
-
-- story: happy path
+story:
+- story: Greeting
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: mood_great
-  - action: utter_happy
 
-- story: sad path 1
+- story: Perform geosampling
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: affirm
-  - action: utter_happy
+  - intent: geosampling
+  - action: utter_geosample
 
-- story: sad path 2
+- story: Check vitals
   steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: mood_unhappy
-  - action: utter_cheer_up
-  - action: utter_did_that_help
-  - intent: deny
-  - action: utter_goodbye
+  - intent: check_vitals
+  - action: utter_check_vitals
+
+- story: Path Finding
+  steps:
+  - intent: path_finding
+  - action: action_path_find
