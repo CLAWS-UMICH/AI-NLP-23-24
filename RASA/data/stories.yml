@@ -1,15 +1,19 @@
 version: "3.1"
 
-story:
+
+stories:
+
 - story: Greeting
   steps:
   - intent: greet
   - action: utter_greet
+  - intent: geosampling
+  - action: utter_geosampling
 
 - story: Perform geosampling
   steps:
   - intent: geosampling
-  - action: utter_geosample
+  - action: utter_geosampling
 
 - story: Check vitals
   steps:

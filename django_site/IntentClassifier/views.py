@@ -13,4 +13,5 @@ class WebhookView(View):
     def post(self, request, *args, **kwargs):
         # You can access the POST data from Rasa with request.body
         # Here you'd run some logic to handle the Rasa request
+        print('response', request.body)
         return JsonResponse({'status': 'received'})
