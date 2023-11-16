@@ -32,3 +32,48 @@ nlu:
     - Find a route
     - Help me navigate
     - Path finding
+
+- intent: take
+  examples: |
+    - Take a photo
+    - Do an XRF scan
+    - Do a scan
+    - Capture 
+    - Scan
+
+- intent: delete
+  examples: |
+    - Delete [task]
+    - Remove [task]
+    - Delete [photo]
+    - Remove [photo]
+
+- intent: sample
+  examples: |
+    - View [sample]
+    - Open [sample]
+    - Take sample
+
+- intent: pin
+  examples: |
+    - [pin]
+
+- intent: on
+  examples: |
+    - Turn on fan
+    - Fan on
+    - Activate fan
+
+- intent: off
+  examples: |
+    - Turn off fan
+    - Fan off
+    - Deactivate fan
+
+- intent: temperature
+  examples: |
+    - What is the temperature in celcius?
+    - What is the temperature in farenheit?
+    - Temperature in farenheit
+    - Temperature in celcius
+    - Temperature

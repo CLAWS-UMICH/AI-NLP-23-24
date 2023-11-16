@@ -20,6 +20,9 @@ responses:
   action_path_find:
   - text: "Finding path..."
 
+  action_open_letter:
+  - text: "Opening letter..."
+
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

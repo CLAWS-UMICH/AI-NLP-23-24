@@ -24,3 +24,18 @@ stories:
   steps:
   - intent: path_finding
   - action: action_path_find
+
+- story: Open letter
+  steps:
+  - intent: open
+  - action: action_open_letter
+
+- story: Close letter
+  steps:
+  - intent: close
+  - action: action_close_letter
+
+- story: 
+  steps:
+  - intent: 
+  - action: 
