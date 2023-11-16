@@ -77,3 +77,72 @@ nlu:
     - Temperature in farenheit
     - Temperature in celcius
     - Temperature
+
+- intent: open
+  examples: |
+    - open [letter](item)
+    - I want to open [tasks](item)
+    - Can you open [navigation](item)
+    - Please open [messages](item)
+    - open [geo samples](item)
+    - Let's look at [vitals](item)
+    - I need to see the [tasklist](item)
+    - open [John's](astronaut_name) [tasks](item)
+    - Show me [John's](astronaut_name) [vitals](item)
+    - I need to open [equipment check](task_name)
+  
+- intent: close
+  examples: |
+    - close [letter](item)
+    - I want to close [tasks](item)
+    - Can you close [navigation](item)
+    - Please close [messages](item)
+    - close [geo samples](item)
+    - Let's close [vitals](item)
+    - I need to close the [tasklist](item)
+    - close [John's](astronaut_name) [tasks](item)
+    - Shut down [Anna's](astronaut_name) [vitals](item)
+    - I need to close [equipment check](task_name)
+    - close all [apps](item_group)
+
+- intent: show
+  examples: |
+    - show the [menu](item)
+    - show the [menu](item)
+    - Can you show the [mini map](item)
+
+- intent: hide
+  examples: |
+    - hide the [menu](item)
+    - hide my [menu](item)
+    - I need to hide the [mini map](item)
+
+- intent: enter
+  examples: |
+    - enter [geo sampling mode](mode)
+    - I want to enter [navigation mode](mode)
+    - Can we enter [route planning mode](mode)
+    - Switch to [uia egress mode](mode)
+    - Let's enter [airlock mode](mode)
+    - Activate [geo sample mode](mode)
+
+- intent: switch_mode
+  examples: |
+    - Switch to [geo sampling mode](mode_type)
+    - Can we switch to [navigation mode](mode_type)?
+    - I want to switch to [route planning mode](mode_type)
+    - Activate [uia egress mode](mode_type)
+    - Change to [airlock mode](mode_type)
+    - Move to [geo sample mode](mode_type)
+
+- intent: complete
+  examples: |
+    - complete [task](object)
+    - I need to complete the [route](object)
+    - Mark this [task](object) as complete
+
+
+
+
+
+

@@ -5,6 +5,26 @@ intents:
   - geosampling
   - check_vitals
   - path_finding
+  - open
+  - close
+  - show
+  - hide
+  - enter
+  - mode
+  - complete
+  - take
+  - delete
+  - sample
+  - pin
+  - on
+  - off
+  - temperature
+  - set
+  - end
+  - aad
+  - mute
+  - go
+  - what is my ?
 
 
 responses:
