@@ -34,8 +34,3 @@ stories:
   steps:
   - intent: close
   - action: action_close_letter
-
-- story: 
-  steps:
-  - intent: 
-  - action: 

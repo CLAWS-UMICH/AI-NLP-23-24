@@ -21,23 +21,28 @@ intents:
   - temperature
   - set
   - end
-  - aad
+  - add
   - mute
   - go
   - what is my ?
+entities:
+  - name
 
+
+actions:
+  - action_hello_world
 
 responses:
   utter_greet:
   - text: "Hey astronaut!"
 
   utter_geosampling:
-  - text: "Taking sample..."
+  - text: "Geosampling"
 
   utter_check_vitals:
   - text: "Checking vitals..."
 
-  action_path_find:
+  utter_path_find:
   - text: "Finding path..."
 
   action_open_letter:

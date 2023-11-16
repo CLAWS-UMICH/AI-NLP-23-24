@@ -73,7 +73,7 @@ nlu:
 - intent: temperature
   examples: |
     - What is the temperature in celcius?
-    - What is the temperature in farenheit?
+    - What is the temperature in [farenheit]?
     - Temperature in farenheit
     - Temperature in celcius
     - Temperature
@@ -140,9 +140,6 @@ nlu:
     - complete [task](object)
     - I need to complete the [route](object)
     - Mark this [task](object) as complete
-
-
-
 
 
 
