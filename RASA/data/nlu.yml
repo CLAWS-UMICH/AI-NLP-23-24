@@ -28,7 +28,7 @@ nlu:
 - intent: path_finding
   examples: |
     - Show me the way
-    - How do I get to [location]?
+    - How do I get to [location]{"entity": "location"}
     - Find a route
     - Help me navigate
     - Path finding
@@ -43,20 +43,20 @@ nlu:
 
 - intent: delete
   examples: |
-    - Delete [task]
-    - Remove [task]
-    - Delete [photo]
-    - Remove [photo]
+    - Delete [task]{"entity": "task"}
+    - Remove [task]{"entity": "task"}
+    - Delete [photo]{"entity": "photo"}
+    - Remove [photo]{"entity": "photo"}
 
 - intent: sample
   examples: |
-    - View [sample]
-    - Open [sample]
+    - View [sample]{"entity": "sample"}
+    - Open [sample]{"entity": "sample"}
     - Take sample
 
 - intent: pin
   examples: |
-    - [pin]
+    - [pin]{"entity": "pin"}
 
 - intent: on
   examples: |
@@ -80,66 +80,60 @@ nlu:
 
 - intent: open
   examples: |
-    - open [letter](item)
-    - I want to open [tasks](item)
-    - Can you open [navigation](item)
-    - Please open [messages](item)
-    - open [geo samples](item)
-    - Let's look at [vitals](item)
-    - I need to see the [tasklist](item)
-    - open [John's](astronaut_name) [tasks](item)
-    - Show me [John's](astronaut_name) [vitals](item)
-    - I need to open [equipment check](task_name)
+    - open [letter]{"entity": "item"}
+    - I want to open [tasks]{"entity": "item"}
+    - Can you open [navigation]{"entity": "item"}
+    - Please open [messages]{"entity": "item"}
+    - open [geo samples]{"entity": "item"}
+    - Let's look at [vitals]{"entity": "item"}
+    - I need to see the [tasklist]{"entity": "item"}
+    - open [John's]{"entity": "astronaut_name"} [tasks]{"entity": "item"}
+    - Show me [John's]{"entity": "astronaut_name"} [vitals]{"entity": "item"}
+    - I need to open [equipment check]{"entity": "task_name"}
   
 - intent: close
   examples: |
-    - close [letter](item)
-    - I want to close [tasks](item)
-    - Can you close [navigation](item)
-    - Please close [messages](item)
-    - close [geo samples](item)
-    - Let's close [vitals](item)
-    - I need to close the [tasklist](item)
-    - close [John's](astronaut_name) [tasks](item)
-    - Shut down [Anna's](astronaut_name) [vitals](item)
-    - I need to close [equipment check](task_name)
-    - close all [apps](item_group)
+    - close [letter]{"entity": "item"}
+    - I want to close [tasks]{"entity": "item"}
+    - Can you close [navigation]{"entity": "item"}
+    - Please close [messages]{"entity": "item"}
+    - close [geo samples]{"entity": "item"}
+    - Let's close [vitals]{"entity": "item"}
+    - I need to close the [tasklist]{"entity": "item"}
+    - close [John's]{"entity": "astronaut_name"} [tasks]{"entity": "item"}
+    - Shut down [Anna's]{"entity": "astronaut_name"} [vitals]{"entity": "item"}
+    - I need to close [equipment check]{"entity": "task_name"}
+    - close all [apps]{"entity": "item_group"}
 
 - intent: show
   examples: |
-    - show the [menu](item)
-    - show the [menu](item)
-    - Can you show the [mini map](item)
+    - show the [menu]{"entity": "item"}
+    - Can you show the [mini map]{"entity": "item"}
 
 - intent: hide
   examples: |
-    - hide the [menu](item)
-    - hide my [menu](item)
-    - I need to hide the [mini map](item)
+    - hide the [menu]{"entity": "item"}
+    - I need to hide the [mini map]{"entity": "item"}
 
 - intent: enter
   examples: |
-    - enter [geo sampling mode](mode)
-    - I want to enter [navigation mode](mode)
-    - Can we enter [route planning mode](mode)
-    - Switch to [uia egress mode](mode)
-    - Let's enter [airlock mode](mode)
-    - Activate [geo sample mode](mode)
+    - enter [geo sampling mode]{"entity": "mode"}
+    - I want to enter [navigation mode]{"entity": "mode"}
+    - Can we enter [route planning mode]{"entity": "mode"}
+    - Switch to [uia egress mode]{"entity": "mode"}
+    - Let's enter [airlock mode]{"entity": "mode"}
+    - Activate [geo sample mode]{"entity": "mode"}
 
 - intent: switch_mode
   examples: |
-    - Switch to [geo sampling mode](mode_type)
-    - Can we switch to [navigation mode](mode_type)?
-    - I want to switch to [route planning mode](mode_type)
-    - Activate [uia egress mode](mode_type)
-    - Change to [airlock mode](mode_type)
-    - Move to [geo sample mode](mode_type)
+    - Switch to [geo sampling mode]{"entity": "mode_type"}
+    - Can we switch to [navigation mode]{"entity": "mode_type"}
+    - I want to switch to [route planning mode]{"entity": "mode_type"}
+    - Activate [uia egress mode]{"entity": "mode_type"}
+    - Change to [airlock mode]{"entity": "mode_type"}
+    - Move to [geo sample mode]{"entity": "mode_type"}
 
 - intent: complete
   examples: |
-    - complete [task](object)
-    - I need to complete the [route](object)
-    - Mark this [task](object) as complete
-
-
-
+    - complete [task]{"entity": "object"}
+    - I need to complete the
