@@ -31,6 +31,18 @@ entities:
 
 actions:
   - action_hello_world
+  - action_open
+  - action_close
+  - action_show
+  - action_hide
+  - action_take
+  - action_delete
+  - action_sample
+  - action_pin
+  - action_temperature
+  - action_enter
+  - action_mode
+  - action_complete
 
 responses:
   utter_greet:
@@ -39,14 +51,15 @@ responses:
   utter_geosampling:
   - text: "Geosampling"
 
-  utter_check_vitals:
-  - text: "Checking vitals..."
-
-  utter_path_find:
-  - text: "Finding path..."
-
-  action_open_letter:
+  action_open:
   - text: "Opening letter..."
+
+  action_show:
+  - text: "Showing..."
+
+  action_hide:
+  - text: "Hiding..."
+
 
 session_config:
   session_expiration_time: 60

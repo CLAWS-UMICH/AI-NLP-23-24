@@ -7,30 +7,83 @@ stories:
   steps:
   - intent: greet
   - action: utter_greet
-  - intent: geosampling
-  - action: utter_geosampling
 
-- story: Perform geosampling
+- story: Preform Geosample
   steps:
   - intent: geosampling
   - action: utter_geosampling
 
-- story: Check vitals
+- story: Take a Something
   steps:
-  - intent: check_vitals
-  - action: utter_check_vitals
+  - intent: take
+  - action: action_take
 
-- story: Path Finding
+- story: Delete a Something
   steps:
-  - intent: path_finding
-  - action: action_path_find
+  - intent: delete
+  - action: action_delete
+
+- story: Sample a Something
+  steps:
+  - intent: sample
+  - action: action_sample
+
+- story: Pin a Something
+  steps:
+  - intent: pin
+  - action: action_pin
+
+- story: turn it on
+  steps:
+  - intent: on
+  - action: action_on
+
+- story: turn it off
+  steps:
+  - intent: off
+  - action: action_off
+
+- story: What is the temp
+  steps:
+  - intent: temperature
+  - action: action_temperature
 
 - story: Open letter
   steps:
   - intent: open
-  - action: action_open_letter
+  - action: action_open
 
 - story: Close letter
   steps:
   - intent: close
-  - action: action_close_letter
+  - action: action_close
+
+- story: Show menu or minimap
+  steps:
+  - intent: show
+  - action: action_show
+
+- story: Hide menu or minimap
+  steps:
+  - intent: hide
+  - action: action_hide
+
+- story: Enter a Something
+  steps:
+  - intent: enter
+  - action: action_enter
+
+- story: Switching the mode
+  steps:
+  - intent: switch_mode
+  - action: action_mode
+
+- story: Take a Something
+  steps:
+  - intent: take
+  - action: action_take
+
+- story: Completing a Something
+  steps:
+  - intent: complete
+  - action: action_complete

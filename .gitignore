@@ -1,3 +1,4 @@
 rasa_env/
 .rasa
 RASA/models/
+env/

@@ -17,21 +17,6 @@ nlu:
     - Collect samples
     - Sample collection
 
-- intent: check_vitals
-  examples: |
-    - Check my vitals
-    - Vital signs
-    - How am I lookin?
-    - I need a health check
-    - Are my vitals okay?
-
-- intent: path_finding
-  examples: |
-    - Show me the way
-    - How do I get to [location]{"entity": "location"}
-    - Find a route
-    - Help me navigate
-    - Path finding
 
 - intent: take
   examples: |
