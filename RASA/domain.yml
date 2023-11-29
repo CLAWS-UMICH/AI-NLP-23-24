@@ -24,7 +24,23 @@ intents:
   - add
   - mute
   - go
-  - what is my ?
+  - query_status
+  - set
+  - end
+  - add
+  - mute
+  - navigate
+  - query_status
+  - map_reset
+  - map_add_pin
+  - map_zoom
+  - map_pan
+  - map_move
+  - map_face
+  - map_center
+  - map_place_pin
+  - map_bigger
+  - map_smaller
 entities:
   - name
 
@@ -43,6 +59,22 @@ actions:
   - action_enter
   - action_mode
   - action_complete
+  - action_set
+  - action_end
+  - action_add
+  - action_mute
+  - action_navigate
+  - action_query_status 
+  - action_map_reset
+  - action_map_add_pin
+  - action_map_zoom
+  - action_map_pan
+  - action_map_move
+  - action_map_face
+  - action_map_center
+  - action_map_place_pin
+  - action_map_bigger
+  - action_map_smaller
 
 responses:
   utter_greet:
