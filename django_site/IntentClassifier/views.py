@@ -9,7 +9,8 @@ from django.views import View
 class WebhookView(View):
 
     # Assuming the Rasa server is running on the same host, on port 5005
-    rasa_endpoint = 'http://localhost:5005/webhooks/rest/webhook/'
+    # rasa_endpoint = 'http://localhost:5005/webhooks/rest/webhook/'
+    rasa_endpoint = 'https://248f-35-3-93-79.ngrok-free.app/webhooks/rest/webhook/'
 
     def get(self, request, *args, **kwargs):
         # This GET method is just for testing purposes
