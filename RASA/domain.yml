@@ -3,15 +3,6 @@ version: "3.1"
 intents:
   - greet
   - geosampling
-  - check_vitals
-  - path_finding
-  - open
-  - close
-  - show
-  - hide
-  - enter
-  - mode
-  - complete
   - take
   - delete
   - sample
@@ -19,12 +10,13 @@ intents:
   - on
   - off
   - temperature
-  - set
-  - end
-  - add
-  - mute
-  - go
-  - query_status
+  - open
+  - close
+  - show
+  - hide
+  - enter
+  - switch_mode
+  - complete
   - set
   - end
   - add
@@ -41,9 +33,100 @@ intents:
   - map_place_pin
   - map_bigger
   - map_smaller
-entities:
-  - name
 
+entities:
+  - item
+  - mode
+  - mode_type
+  - object
+  - direction
+  - vital
+  - number
+  - task
+  - details
+  - photo
+  - sample
+  - pin
+  - astronaut_name
+  - task_name
+  - item_group
+
+slots:
+  item:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: item
+  mode:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mode
+  mode_type:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: mode_type
+  object:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: object
+  direction:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: direction
+  vital:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: vital
+  number:
+    type: float
+    mappings:
+      - type: from_entity
+        entity: number
+  task:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: task
+  details:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: details
+  photo:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: photo
+  sample:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: sample
+  pin:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: pin
+  astronaut_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: astronaut_name
+  task_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: task_name
+  item_group:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: item_group
 
 actions:
   - action_hello_world
@@ -55,6 +138,8 @@ actions:
   - action_delete
   - action_sample
   - action_pin
+  - action_on
+  - action_off
   - action_temperature
   - action_enter
   - action_mode
@@ -64,7 +149,7 @@ actions:
   - action_add
   - action_mute
   - action_navigate
-  - action_query_status 
+  - action_query_status
   - action_map_reset
   - action_map_add_pin
   - action_map_zoom
@@ -75,23 +160,16 @@ actions:
   - action_map_place_pin
   - action_map_bigger
   - action_map_smaller
+  - utter_greet
+  - utter_geosampling
+  # Add other utter_ actions if needed
 
 responses:
   utter_greet:
-  - text: "Hey astronaut!"
-
+    - text: "Hello astronaut!"
   utter_geosampling:
-  - text: "Geosampling"
-
-  action_open:
-  - text: "Opening letter..."
-
-  action_show:
-  - text: "Showing..."
-
-  action_hide:
-  - text: "Hiding..."
-
+    - text: "Starting geosampling procedure."
+  # Add other responses if needed
 
 session_config:
   session_expiration_time: 60
