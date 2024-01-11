@@ -71,6 +71,7 @@ networkx==2.6.3
 numpy==1.23.5
 oauthlib==3.2.2
 opt-einsum==3.3.0
+openai==1.7.0
 packaging==20.9
 pamqp==3.2.1
 partd==1.4.1

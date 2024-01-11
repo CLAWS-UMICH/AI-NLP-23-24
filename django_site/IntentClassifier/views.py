@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from django.views import View
+from IntentClassifier.utils import ExternalServiceClient
 
 @method_decorator(csrf_exempt, name='dispatch')
 class WebhookView(View):
@@ -14,6 +15,18 @@ class WebhookView(View):
 
     def get(self, request, *args, **kwargs):
         # This GET method is just for testing purposes
+        # Example usage:
+        chatgpt_client = ExternalServiceClient("https://chatgpt35.example.com/api")
+        llama_client = ExternalServiceClient("https://llama.example.com/api")
+
+        # ChatGPT API Demo
+        # Make a request to the ChatGPT service
+        chatgpt_response = chatgpt_client.make_request("chat", {"text": "Hello, ChatGPT!"})
+        print("ChatGPT Response:", chatgpt_response)
+
+        # Make a request to the LLama service
+        llama_response = llama_client.make_request("llama_prompt", {"prompt": "Tell me about llamas."})
+        print("LLama Response:", llama_response)
         return JsonResponse({'status': 'ok'}, status=200)
 
     def post(self, request, *args, **kwargs):
