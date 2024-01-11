@@ -23,3 +23,16 @@ class ExternalServiceClient:
         # else:
         #     # You might want to handle errors more gracefully
         #     raise Exception(f"Request failed with status code {response.status_code}")
+    def execute_command(self, voice_command, tags):
+        tags_str = ", ".join(tags)
+        prompt = f"""
+            Can you take this sentence: {voice_command} and extract the tags of {tags_str} and if its not there put null. Only contain tag names and values in response.
+        """
+        response = self.openai_client.chat.completions.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt},
+            ]
+        )
+        return response.choices[0].message
