@@ -1,5 +1,6 @@
 import requests
 from openai import OpenAI
+import json
 
 class ExternalServiceClient:
     def __init__(self, base_url):
@@ -26,13 +27,27 @@ class ExternalServiceClient:
     def execute_command(self, voice_command, tags):
         tags_str = ", ".join(tags)
         prompt = f"""
-            Can you take this sentence: {voice_command} and extract the tags of {tags_str} and if its not there put null. Only contain tag names and values in response.
+            Can you take this sentence: {voice_command} and extract the tags of {tags_str} and if its not there put null.
         """
         response = self.openai_client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "system", "content":"""
+                    You are a helpful assistant.
+                    You will give the result of my query in the following format:
+                    {"tag1":"value of tag1", "tag2":"value of tag2"}
+                """},
                 {"role": "user", "content": prompt},
             ]
         )
-        return response.choices[0].message
+        resp = response.choices[0].message.content
+        json_resp = json.loads(resp)
+
+        return json_resp
+
+
+            
+
+esc = ExternalServiceClient("")
+a = esc.execute_command("geosample this rock that basalt and yellow", ["rock color", "rock type", "rock_size"])
+print(a)
