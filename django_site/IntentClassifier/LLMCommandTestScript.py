@@ -12,7 +12,7 @@ def send_post_request(message=""):
 def run_test_case(message, expected_response):
     response = send_post_request(message)
     print(response)
-    return expected_response == respones.text
+    return expected_response == response.text
 
 if __name__ == '__main__':
     run_test_case("TEST", "TEST")

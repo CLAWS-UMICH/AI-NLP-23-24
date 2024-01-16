@@ -46,8 +46,16 @@ class ExternalServiceClient:
         return json_resp
 
 
-            
+esc = ExternalServiceClient("")    
+f = open("testcasesGPT.txt", "r")
+filestr = f.read()
+filestrlist = filestr.split("\n")
+tagslist = []
+sentencelist = []
+for i in range(1, len(filestrlist), 2):
+    tagslist.append(filestrlist[i].split(", "))
+    sentencelist.append(filestrlist[i-1])
 
-esc = ExternalServiceClient("")
-a = esc.execute_command("geosample this rock that basalt and yellow", ["rock color", "rock type", "rock_size"])
-print(a)
+for i in range(1, len(sentencelist)):
+    resp = esc.execute_command(sentencelist[i], tagslist[i])
+    print(resp)
