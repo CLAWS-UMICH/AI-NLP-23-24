@@ -6,8 +6,13 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from IntentClassifier.utils import ExternalServiceClient
 
+BYPASS_RASA_TESTING = True
+
 @method_decorator(csrf_exempt, name='dispatch')
 class WebhookView(View):
+
+    def __init__(self):
+        self.prompting = ExternalServiceClient("")
 
     # Assuming the Rasa server is running on the same host, on port 5005
     # rasa_endpoint = 'http://localhost:5005/webhooks/rest/webhook/'
@@ -15,18 +20,6 @@ class WebhookView(View):
 
     def get(self, request, *args, **kwargs):
         # This GET method is just for testing purposes
-        # Example usage:
-        chatgpt_client = ExternalServiceClient("https://chatgpt35.example.com/api")
-        llama_client = ExternalServiceClient("https://llama.example.com/api")
-
-        # ChatGPT API Demo
-        # Make a request to the ChatGPT service
-        chatgpt_response = chatgpt_client.make_request("chat", {"text": "Hello, ChatGPT!"})
-        print("ChatGPT Response:", chatgpt_response)
-
-        # Make a request to the LLama service
-        llama_response = llama_client.make_request("llama_prompt", {"prompt": "Tell me about llamas."})
-        print("LLama Response:", llama_response)
         return JsonResponse({'status': 'ok'}, status=200)
 
     def post(self, request, *args, **kwargs):
@@ -39,8 +32,13 @@ class WebhookView(View):
             "message": incoming_message.get("message", "")
         }
 
-        # Make a POST request to the Rasa server
-        response = requests.post(self.rasa_endpoint, json=payload)
+        # TODO: Work on messing with this so we can test out the GPT code using an endpoint 
+        #       (if BYPASS_RASA_TESTING skip the Rasa processing for now)
+        if not BYPASS_RASA_TESTING:
+            # Make a POST request to the Rasa server
+            response = requests.post(self.rasa_endpoint, json=payload)
+        else:
+            return JsonResponse()
 
         # Check if the request was successful
         if response.status_code == 200:

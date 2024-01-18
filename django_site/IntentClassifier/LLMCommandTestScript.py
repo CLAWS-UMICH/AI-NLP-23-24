@@ -1,6 +1,6 @@
 import requests
 
-TEST_ENDPOINT = "https://localhost:8000/IntentClassifier/webhook" # Double check this
+TEST_ENDPOINT = "http://localhost:8000/IntentClassifier/webhook/" # Double check this
 
 def send_post_request(message=""):
     request_obj = {
@@ -11,7 +11,15 @@ def send_post_request(message=""):
 
 def run_test_case(message, expected_response, expected_data):
     response = send_post_request(message)
-    print(response)
+    print("Running test case: {message}".format(message=message))
+    print(response.text)
+    if expected_response == response.text:
+        # TODO: Test case response matches json response text
+        print("CORRECT")
+    else:
+        # TODO: Test case response doesn't matche expected value
+        print(expected_response == response.text)
+        print("WRONG")        
     return expected_response == response.text
 
 if __name__ == '__main__':

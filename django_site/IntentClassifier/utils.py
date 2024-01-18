@@ -2,6 +2,29 @@ import requests
 from openai import OpenAI
 import json
 
+FEW_SHOT_PROMPTS = """
+    Record this rock that is blue and yellow 
+    rock color
+    Geo Sampling blue lithium rock, weighs around 40 pounds
+    rock color, rock size
+    Sample a basalt rock with a diameter of 10 inches
+    rock type, rock size
+    Here is a magenta, piece of granite. I found it in Arizona
+    rock color, rock size, rock type, location
+    Found basalt in Hadley Rille.
+    rock type, location
+    This is a red granite rock with a mass of 20 kg
+    rock color, rock type, rock size
+    This is Yash Patel, recording rock with mass of 400 grams and life in it
+    astronaut name, rock size
+    Identify this white limestone rock from the Grand Canyon from 1979
+    rock color, rock type, location, year
+    Sample a sedimentary rock with a length of 7 cm
+    rock type, rock size
+    Record a pink rock found by NASA astronauts on the lunar surface
+    rock color, people, location
+"""
+
 class ExternalServiceClient:
     def __init__(self, base_url):
         self.base_url = base_url
@@ -24,6 +47,7 @@ class ExternalServiceClient:
         # else:
         #     # You might want to handle errors more gracefully
         #     raise Exception(f"Request failed with status code {response.status_code}")
+
     def execute_command(self, voice_command, tags):
         tags_str = ", ".join(tags)
         prompt = f"""
@@ -46,16 +70,17 @@ class ExternalServiceClient:
         return json_resp
 
 
-esc = ExternalServiceClient("")    
-f = open("testcasesGPT.txt", "r")
-filestr = f.read()
-filestrlist = filestr.split("\n")
-tagslist = []
-sentencelist = []
-for i in range(1, len(filestrlist), 2):
-    tagslist.append(filestrlist[i].split(", "))
-    sentencelist.append(filestrlist[i-1])
+# TODO: Try to move this somewhere else if possible
+# esc = ExternalServiceClient("")    
+# f = open("testcasesGPT.txt", "r")
+# filestr = f.read()
+# filestrlist = filestr.split("\n")
+# tagslist = []
+# sentencelist = []
+# for i in range(1, len(filestrlist), 2):
+#     tagslist.append(filestrlist[i].split(", "))
+#     sentencelist.append(filestrlist[i-1])
 
-for i in range(1, len(sentencelist)):
-    resp = esc.execute_command(sentencelist[i], tagslist[i])
-    print(resp)
+# for i in range(1, len(sentencelist)):
+#     resp = esc.execute_command(sentencelist[i], tagslist[i])
+#     print(resp)
