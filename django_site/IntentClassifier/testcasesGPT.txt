@@ -1,20 +1,39 @@
 Record this rock that is blue and yellow 
-rock color
+color
+{"color":"blue and yellow"}
 Geo Sampling blue lithium rock, weighs around 40 pounds
 rock color, rock size
+{"color":"blue", "size":"40 pounds"}
 Sample a basalt rock with a diameter of 10 inches
 rock type, rock size
-Here is a magenta, piece of granite. I found it in Arizona
-rock color, rock size, rock type, location
+{"type":"basalt","size":"10 inches"}
+Here is a magenta piece of granite. I found it in Arizona
+rock color, rock type, location
+{"color":"magenta", "type":"granite", "location":"Arizona"}
 Found basalt in Hadley Rille.
 rock type, location
+{"type":"basalt", "location": "Hadley Rille"}
 This is a red granite rock with a mass of 20 kg
 rock color, rock type, rock size
+{"color":"red", "type":"granite", "size":"20 kg"}
 This is Yash Patel, recording rock with mass of 400 grams and life in it
 astronaut name, rock size
+{"astronaut name":"Yash Patel", "size":"400 grams"}
 Identify this white limestone rock from the Grand Canyon from 1979
 rock color, rock type, location, year
+{"color":"white", "type": "limestone", "location":"Grand Canyon", "year":"1979"}
 Sample a sedimentary rock with a length of 7 cm
 rock type, rock size
+{"type":"sedimentary", "size":"7 cm"}
 Record a pink rock found by NASA astronauts on the lunar surface
 rock color, people, location
+{"color":"pink", "people":"NASA astronauts", "location":"lunar surface"}
+This rock is made of black shale with a mass of 300 mg
+rock color, rock type, rock size
+{"color":"black", "type":"shale", "size":"300 mg"}
+Sample this igenous rock found in a southern plain from 1988
+rock type, location, year
+{"type":"igneous", "location":"southern plain", "year":"1988"}
+There is a blue-gray rock we found 
+rock color
+{"color":"blue-gray"}

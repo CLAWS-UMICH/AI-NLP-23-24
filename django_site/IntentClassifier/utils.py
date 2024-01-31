@@ -68,19 +68,3 @@ class ExternalServiceClient:
         json_resp = json.loads(resp)
 
         return json_resp
-
-
-# TODO: Try to move this somewhere else if possible
-# esc = ExternalServiceClient("")    
-# f = open("testcasesGPT.txt", "r")
-# filestr = f.read()
-# filestrlist = filestr.split("\n")
-# tagslist = []
-# sentencelist = []
-# for i in range(1, len(filestrlist), 2):
-#     tagslist.append(filestrlist[i].split(", "))
-#     sentencelist.append(filestrlist[i-1])
-
-# for i in range(1, len(sentencelist)):
-#     resp = esc.execute_command(sentencelist[i], tagslist[i])
-#     print(resp)
