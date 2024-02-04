@@ -13,5 +13,5 @@ message = input("What's your message?\n")
 
 print("Sending message now...")
 
-r = send_post_request({"command":message, "tags":"color"})
+r = send_post_request({"command":message})
 print(r.text)
