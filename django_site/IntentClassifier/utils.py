@@ -57,11 +57,11 @@ class ExternalServiceClient:
             model="gpt-3.5-turbo",
             messages=[
                 {"role": "system", "content":"""
-                    You are a helpful assistant.
-                    You will give the result of my query in the following format:
-                    {"tag1":"value of tag1", "tag2":"value of tag2"}
+                    Given a sentence, you extract the rock color, rock location, and rock type in the following format
+                    {"color":"<color>", "location":"<location>", "type":"<type>"}
+                    Put null if the tag cannot be found in the sentence.
                 """},
-                {"role": "user", "content": prompt},
+                {"role": "user", "content": voice_command},
             ]
         )
         resp = response.choices[0].message.content

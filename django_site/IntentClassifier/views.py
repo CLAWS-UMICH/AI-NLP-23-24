@@ -26,7 +26,6 @@ class WebhookView(View):
     def post(self, request):
         # Parse the incoming JSON data
         incoming_message = json.loads(request.body)
-        print(incoming_message['message']['command'])
         # Prepare the payload to Rasa
         payload = {
             "sender": incoming_message.get("sender", "default"),  # You may want to specify the sender ID
@@ -38,37 +37,12 @@ class WebhookView(View):
         if not BYPASS_RASA_TESTING:
             # Make a POST request to the Rasa server
             response = requests.post(self.rasa_endpoint, json=payload)
-            command_str = json.loads(response.text)[0]['text']
-            command = json.loads('"' + command_str + '"')
-            try:
-                if (command == "geosample"):
-                    if not (LLAMA):
-                        esc = ExternalServiceClient("")    
-                        indata = incoming_message['message']
-                        response = esc.execute_command(indata["voice_command"], indata["tags"])
-                        print(response.text)
-                        return JsonResponse(json.dumps(response), safe=False)
-                    else:
-                        return JsonResponse({"error":"no llama integration"})
-            except:
-                return JsonResponse({"error":"command failed to be parsed"})
-        else:
-            esc = ExternalServiceClient("")    
-            indata = incoming_message['message']
-            response = esc.execute_command(indata["voice_command"], indata["tags"])
-            return JsonResponse(json.dumps(response), safe=False)
-            # filestr = f.read()
-            # filestrlist = filestr.split("\n")
-            # tagslist = []
-            # sentencelist = []
-            # for i in range(1, len(filestrlist), 2):
-            #     tagslist.append(filestrlist[i].split(", "))
-            #     sentencelist.append(filestrlist[i-1])
-
-            # for i in range(1, len(sentencelist)):
-            #     resp = esc.execute_command(sentencelist[i], tagslist[i])
-            #     print(resp)
-
+            command_str = json.loads(response.json()[0]['text'].replace("'", '"'))
+            if (command_str['command'] == "geosample"):
+                esc = ExternalServiceClient("")
+                indata = incoming_message['message']
+                response = esc.execute_command(indata["command"])
+                return JsonResponse(response, safe=False)
         # Check if the request was successful
         if response.status_code == 200:
             # Return Rasa's response
