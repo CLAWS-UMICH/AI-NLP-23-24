@@ -162,6 +162,37 @@ actions:
   - action_map_smaller
   - utter_greet
   - utter_geosampling
+  - utter_hello_world
+  - utter_open
+  - utter_close
+  - utter_show
+  - utter_hide
+  - utter_take
+  - utter_delete
+  - utter_sample
+  - utter_pin
+  - utter_on
+  - utter_off
+  - utter_temperature
+  - utter_enter
+  - utter_mode
+  - utter_complete
+  - utter_set
+  - utter_end
+  - utter_add
+  - utter_mute
+  - utter_navigate
+  - utter_query_status
+  - utter_map_reset
+  - utter_map_add_pin
+  - utter_map_zoom
+  - utter_map_pan
+  - utter_map_move
+  - utter_map_face
+  - utter_map_center
+  - utter_map_place_pin
+  - utter_map_bigger
+  - utter_map_smaller
   # Add other utter_ actions if needed
 
 responses:
@@ -169,6 +200,68 @@ responses:
     - text: "Hello astronaut!"
   utter_geosampling:
     - text: "Starting geosampling procedure."
+  utter_hello_world:
+  - text: "Hello World!"
+  utter_open:
+  - text: "Opening now."
+  utter_close:
+  - text: "Closing."
+  utter_show:
+  - text: "Showing details."
+  utter_hide:
+  - text: "Hiding details."
+  utter_take:
+  - text: "Taking what you requested."
+  utter_delete:
+  - text: "Deleting as requested."
+  utter_sample:
+  - text: "Sampling initiated."
+  utter_pin:
+  - text: "Pinned successfully."
+  utter_on:
+  - text: "Turning on."
+  utter_off:
+  - text: "Turning off."
+  utter_temperature:
+  - text: "Checking temperature."
+  utter_enter:
+  - text: "Entering the specified area."
+  utter_mode:
+  - text: "Switching mode."
+  utter_complete:
+  - text: "Operation completed."
+  utter_set:
+  - text: "Settings updated."
+    utter_end:
+  - text: "Ending process."
+  utter_add:
+  - text: "Adding to the list."
+  utter_mute:
+  - text: "Muting sounds."
+  utter_navigate:
+  - text: "Navigating to the specified location."
+  utter_query_status:
+  - text: "Querying current status."
+  utter_map_reset:
+  - text: "Resetting map to default."
+  utter_map_add_pin:
+  - text: "Adding pin to map."
+    utter_map_zoom:
+  - text: "Zooming in on the map."
+  utter_map_pan:
+  - text: "Panning map view."
+  utter_map_move:
+  - text: "Moving map to new location."
+  utter_map_face:
+  - text: "Orienting map to face north."
+  utter_map_center:
+  - text: "Centering map on specified location."
+  utter_map_place_pin:
+  - text: "Placing pin on map."
+  utter_map_bigger:
+  - text: "Making map view larger."
+  utter_map_smaller:
+  - text: "Making map view smaller."
   # Add other responses if needed
 
 session_config:
