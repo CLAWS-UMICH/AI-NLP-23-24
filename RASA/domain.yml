@@ -201,7 +201,7 @@ responses:
   - text: "Operation completed."
   utter_set:
   - text: "Settings updated."
-    utter_end:
+  utter_end:
   - text: "Ending process."
   utter_add:
   - text: "Adding to the list."
@@ -215,7 +215,7 @@ responses:
   - text: "Resetting map to default."
   utter_map_add_pin:
   - text: "Adding pin to map."
-    utter_map_zoom:
+  utter_map_zoom:
   - text: "Zooming in on the map."
   utter_map_pan:
   - text: "Panning map view."
