@@ -173,7 +173,6 @@ nlu:
     - Zoom out
     - Can we zoom in closer?
     - Zoom out to see more of the area
-
 - intent: map_pan
   examples: |
     - Pan left
