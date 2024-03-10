@@ -1,5 +1,5 @@
 rasa_env/
-.rasa
+.rasa/
 RASA/models/
 env/
 venv/
