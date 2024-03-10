@@ -169,10 +169,10 @@ nlu:
 
 - intent: map_zoom
   examples: |
-    - Zoom in
-    - Zoom out
-    - Can we zoom in closer?
-    - Zoom out to see more of the area
+    - Zoom [in]{"entity": "type"}
+    - Zoom [out]{"entity": "type"}
+    - Can we zoom [in]{"entity": "type"} closer?
+    - Zoom [out]{"entity": "type"} to see more of the area
 - intent: map_pan
   examples: |
     - Pan left

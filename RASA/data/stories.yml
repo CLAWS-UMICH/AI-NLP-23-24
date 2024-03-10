@@ -58,11 +58,6 @@ stories:
   - intent: close
   - action: utter_close
 
-- story: Show menu or minimap
-  steps:
-  - intent: show
-  - action: utter_show
-
 - story: Hide menu or minimap
   steps:
   - intent: hide
@@ -216,7 +211,7 @@ stories:
 - story: Show menu or minimap
   steps:
   - intent: show
-  - action: utter_show
+  - action: action_show
 
 - story: Hide menu or minimap
   steps:

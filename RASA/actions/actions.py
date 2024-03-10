@@ -21,8 +21,8 @@ class Open(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'open_" + entity + "'\}"
-        dispatcher.utter_message(text=jsonstring)
+        print("this is an entity", entity)
+        dispatcher.utter_message(text="hello")
         return []
     
 class Close(Action):
@@ -49,8 +49,7 @@ class Show(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'show_" + entity + "'\}"
-        dispatcher.utter_message(text=jsonstring)
+        dispatcher.utter_message(text=entity)
         return []
     
 class Hide(Action):

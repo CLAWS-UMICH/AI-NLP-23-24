@@ -131,7 +131,6 @@ slots:
 actions:
   - utter_greet
   - utter_geosampling
-  - utter_hello_world
   - utter_open
   - utter_close
   - utter_show
@@ -162,6 +161,7 @@ actions:
   - utter_map_place_pin
   - utter_map_bigger
   - utter_map_smaller
+  - action_show
   # Add other utter_ actions if needed
 
 responses:
