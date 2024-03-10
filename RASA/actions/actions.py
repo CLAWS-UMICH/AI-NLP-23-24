@@ -49,7 +49,8 @@ class Show(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        dispatcher.utter_message(text=entity)
+        jsonstring = "{'command': 'close', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
+        dispatcher.utter_message(text=jsonstring)
         return []
     
 class Hide(Action):
