@@ -21,8 +21,8 @@ class Open(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        print("this is an entity", entity)
-        dispatcher.utter_message(text="hello")
+        jsonstring = "{'command': 'open', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
+        dispatcher.utter_message(text=jsonstring)
         return []
     
 class Close(Action):
@@ -35,7 +35,7 @@ class Close(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'close_" + entity + "'\}"
+        jsonstring = "{'command': 'close', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -49,7 +49,7 @@ class Show(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "{'command': 'close', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
+        jsonstring = "{'command': 'show', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -63,7 +63,7 @@ class Hide(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'hide_" + entity + "'\}"
+        jsonstring = "{'command': 'hide', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -77,7 +77,7 @@ class Enter(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'enter_" + entity + "'\}"
+        jsonstring = "{'command': 'enter', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
 
@@ -91,7 +91,7 @@ class Mode(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'mode_" + entity + "'\}"
+        jsonstring = "{'command': 'mode', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -105,7 +105,7 @@ class Complete(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'complete_" + entity + "'\}"
+        jsonstring = "{'command': 'complete', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -119,7 +119,7 @@ class Take(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'take_" + entity + "'\}"
+        jsonstring = "{'command': 'take', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -133,7 +133,7 @@ class Delete(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'delete_" + entity + "'\}"
+        jsonstring = "{'command': 'delete', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
 
@@ -147,9 +147,10 @@ class Sample(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'sample_" + entity + "'\}"
+        jsonstring = "{'command': 'sample', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
+
     
 class Pin(Action):
 
@@ -161,7 +162,7 @@ class Pin(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'pin_" + entity + "'\}"
+        jsonstring = "{'command': 'pin', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -175,7 +176,7 @@ class On(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'on_" + entity + "'\}"
+        jsonstring = "{'command': 'on', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
 
@@ -189,7 +190,7 @@ class Off(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'off_" + entity + "'\}"
+        jsonstring = "{'command': 'off', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
 
@@ -203,7 +204,7 @@ class Temperature(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'temperature_" + entity + "'\}"
+        jsonstring = "{'command': 'temperature', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -217,7 +218,7 @@ class Set(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'set_" + entity + "'\}"
+        jsonstring = "{'command': 'set', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -231,7 +232,7 @@ class End(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'end_" + entity + "'\}"
+        jsonstring = "{'command': 'end', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -245,7 +246,7 @@ class Add(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'add_" + entity + "'\}"
+        jsonstring = "{'command': 'add', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -259,7 +260,7 @@ class Mute(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'mute_" + entity + "'\}"
+        jsonstring = "{'command': 'mute', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
     
@@ -273,7 +274,7 @@ class Go(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'go_" + entity + "'\}"
+        jsonstring = "{'command': 'go', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
 
@@ -287,7 +288,7 @@ class WhatIsMy(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
          
         entity = next(tracker.get_latest_entity_values("item"), None)
-        jsonstring = "\{'command': 'action_what_is_my_" + entity + "'\}"
+        jsonstring = "{'command': 'what_is_my', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
 """

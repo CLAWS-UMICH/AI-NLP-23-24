@@ -51,83 +51,6 @@ entities:
   - task_name
   - item_group
 
-slots:
-  item:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: item
-  mode:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: mode
-  mode_type:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: mode_type
-  object:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: object
-  direction:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: direction
-  vital:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: vital
-  number:
-    type: float
-    mappings:
-      - type: from_entity
-        entity: number
-  task:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: task
-  details:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: details
-  photo:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: photo
-  sample:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: sample
-  pin:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: pin
-  astronaut_name:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: astronaut_name
-  task_name:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: task_name
-  item_group:
-    type: text
-    mappings:
-      - type: from_entity
-        entity: item_group
-
 actions:
   - utter_greet
   - utter_geosampling
@@ -161,7 +84,25 @@ actions:
   - utter_map_place_pin
   - utter_map_bigger
   - utter_map_smaller
+  - action_open
+  - action_close
   - action_show
+  - action_hide
+  - action_take
+  - action_delete
+  - action_sample
+  - action_pin
+  - action_on
+  - action_off
+  - action_temperature
+  - action_enter
+  - action_mode
+  - action_complete
+  - action_set
+  - action_end
+  - action_add
+  - action_mute
+
   # Add other utter_ actions if needed
 
 responses:
