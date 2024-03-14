@@ -17,7 +17,6 @@ nlu:
     - Collect samples
     - Sample collection
 
-
 - intent: take
   examples: |
     - Take a photo
@@ -87,11 +86,29 @@ nlu:
 - intent: open
   examples: |
     - open [letter]{"entity": "item"}
+    - open [message]{"entity": "item"}
+    - open [tasks]{"entity": "item"}
+    - open [vitals]{"entity": "item"}
     - I want to open [tasks]{"entity": "item"}
+    - I want to open [letter]{"entity": "item"}
+    - I want to open [message]{"entity": "item"}
+    - I want to open [vitals]{"entity": "item"}
     - Can you open [navigation]{"entity": "item"}
+    - Can you open [messages]{"entity": "item"}
+    - Can you open [tasks]{"entity": "item"}
+    - Can you open [letter]{"entity": "item"}
+    - Can you open [vitals]{"entity": "item"}
     - Please open [messages]{"entity": "item"}
+    - Please open [navigation]{"entity": "item"}
+    - Please open [letter]{"entity": "item"}
+    - Please open [tasks]{"entity": "item"}
+    - Please open [vitals]{"entity": "item"}
     - open [geo samples]{"entity": "item"}
     - Let's look at [vitals]{"entity": "item"}
+    - Let's look at [letters]{"entity": "item"}
+    - Let's look at [message]{"entity": "item"}
+    - Let's look at [tasks]{"entity": "item"}
+    - Let's look at [navigation]{"entity": "item"}
     - I need to see the [tasklist]{"entity": "item"}
     - open [John's]{"entity": "astronaut_name"} [tasks]{"entity": "item"}
     - Show me [John's]{"entity": "astronaut_name"} [vitals]{"entity": "item"}
@@ -157,20 +174,58 @@ nlu:
 - intent: enter
   examples: |
     - enter [geo sampling mode]{"entity": "mode"}
+    - enter [navigation mode]{"entity": "mode"}
+    - enter [route planning mode]{"entity": "mode"}
+    - enter [uia egress mode]{"entity": "mode"}
+    - enter [airlock mode]{"entity": "mode"}
     - I want to enter [navigation mode]{"entity": "mode"}
+    - I want to enter [geosampling mode]{"entity": "mode"}
+    - I want to enter [route planning mode]{"entity": "mode"}
+    - I want to enter [uia egress mode]{"entity": "mode"}
+    - I want to enter [airlock mode]{"entity": "mode"}
     - Can we enter [route planning mode]{"entity": "mode"}
-    - Switch to [uia egress mode]{"entity": "mode"}
+    - Can we enter [geosampling mode]{"entity": "mode"}
+    - Can we enter [uia egress mode]{"entity": "mode"}
+    - Can we enter [airlock mode]{"entity": "mode"}
+    - Can we enter [navigation mode]{"entity": "mode"}
     - Let's enter [airlock mode]{"entity": "mode"}
-    - Activate [geo sample mode]{"entity": "mode"}
+    - Let's enter [navigation mode]{"entity": "mode"}
+    - Let's enter [uia egress mode]{"entity": "mode"}
+    - Let's enter [geosampling mode]{"entity": "mode"}
+    - Let's enter [route planning mode]{"entity": "mode"}
 
 - intent: switch_mode
   examples: |
     - Switch to [geo sampling mode]{"entity": "mode_type"}
-    - Can we switch to [navigation mode]{"entity": "mode_type"}
-    - I want to switch to [route planning mode]{"entity": "mode_type"}
-    - Activate [uia egress mode]{"entity": "mode_type"}
+    - Change to [geo sampling mode]{"entity": "mode_type"}
+    - Switch to [navigation mode]{"entity": "mode_type"}
+    - Change to [navigation mode]{"entity": "mode_type"}
+    - Switch to [route planning mode]{"entity": "mode_type"}
+    - Change to [route planning mode]{"entity": "mode_type"}
+    - Switch to [uia egress mode]{"entity": "mode_type"}
+    - Change to [uia egress mode]{"entity": "mode_type"}
+    - Switch to [airlock mode]{"entity": "mode_type"}
     - Change to [airlock mode]{"entity": "mode_type"}
-    - Move to [geo sample mode]{"entity": "mode_type"}
+    - Move to [geo sampling mode]{"entity": "mode_type"}
+    - Move to [navigation mode]{"entity": "mode_type"}
+    - Move to [route planning mode]{"entity": "mode_type"}
+    - Move to [uia egress mode]{"entity": "mode_type"}
+    - Move to [airlock mode]{"entity": "mode_type"}
+    - Can we switch to [navigation mode]{"entity": "mode_type"}
+    - Can we switch to [geo sampling mode]{"entity": "mode_type"}
+    - Can we switch to [airlock mode]{"entity": "mode_type"}
+    - Can we switch to [uia egress mode]{"entity": "mode_type"}
+    - Can we switch to [route planning mode]{"entity": "mode_type"}
+    - I want to switch to [route planning mode]{"entity": "mode_type"}
+    - I want to switch to [geo sampling mode]{"entity": "mode_type"}
+    - I want to switch to [uia egress mode]{"entity": "mode_type"}
+    - I want to switch to [airlock mode]{"entity": "mode_type"}
+    - I want to switch to [navigation mode]{"entity": "mode_type"}
+    - Activate [uia egress mode]{"entity": "mode_type"}
+    - Activate [geo sampling mode]{"entity": "mode_type"}
+    - Activate [airlock mode]{"entity": "mode_type"}
+    - Activate [navigation mode]{"entity": "mode_type"}
+    - Activate [route planning mode]{"entity": "mode_type"}
 
 - intent: complete
   examples: |
@@ -220,6 +275,7 @@ nlu:
 - intent: add
   examples: |
     - Add [task]{"entity": "object"}
+    - Add new [task]{"entity": "object"}
     - [meeting at 10am]{"entity": "details"} add [calendar]{"entity": "text_box_name"}
 
 - intent: mute
@@ -240,6 +296,10 @@ nlu:
 
 - intent: query_status
   examples: |
+    - temperature
+    - [heart rate]{"entity": "vital"}
+    - [oxygen level]{"entity": "vital"}
+    - [suit pressure]{"entity": "vital"}
     - What is my suit temperature?
     - What is my [heart rate]{"entity": "vital"}?
     - What is my [oxygen level]{"entity": "vital"}?
@@ -264,7 +324,11 @@ nlu:
     - Zoom [in]{"entity": "type"}
     - Zoom [out]{"entity": "type"}
     - Can we zoom [in]{"entity": "type"} closer?
+    - Can we zoom [out]{"entity": "type"} further?
+    - Please zoom [in] to map{"entity": "type"}
+    - Please zoom [out] of map{"entity": "type"}
     - Zoom [out]{"entity": "type"} to see more of the area
+
 - intent: map_pan
   examples: |
     - Pan left
