@@ -32,16 +32,37 @@ nlu:
     - Remove [task]{"entity": "task"}
     - Delete [photo]{"entity": "photo"}
     - Remove [photo]{"entity": "photo"}
+    - Delete [sample]{"entity": "sample"}
+    - Remove [sample]{"entity": "sample"}
+    - Delete [pin]{"entity": "pin"}
+    - Remove [pin]{"entity": "pin"}
+    - Can you delete [task]{"entity": "task"}
+    - Can you remove [task]{"entity": "task"}
+    - Can you delete [photo]{"entity": "photo"}
+    - Can you remove [photo]]{"entity": "photo"}
+    - Can you delete [sample]{"entity": "sample"}
+    - Can you remove [sample]{"entity": "sample"}
+    - Can you delete [pin]{"entity": "pin"}
+    - Can you remove [pin]{"entity": "pin"}
+    - Get rid of [task]{"entity": "task"}
+    - Get rid of [photo]{"entity": "photo"}
+    - Get rid of [sample]{"entity": "sample"}
+    - Get rid of [pin]{"entity": "pin"}
 
 - intent: sample
   examples: |
     - View [sample]{"entity": "sample"}
     - Open [sample]{"entity": "sample"}
-    - Take sample
+    - Take [sample]{"entity": "sample"}
+    - See [sample]{"entity": "sample"}
+    - Obtain [sample]{"entity": "sample"}]
 
 - intent: pin
   examples: |
     - [pin]{"entity": "pin"}
+    - View [pin]{"entity": "pin"}
+    - See [pin]{"entity": "pin"}
+    - Move [pin]{"entity": "pin"}
 
 - intent: on
   examples: |
@@ -92,13 +113,46 @@ nlu:
 
 - intent: show
   examples: |
+    - show [menu]{"entity": "item"}
+    - show [mini map]{"entity": "item"}
+    - show [pin]{"entity": "pin"}
+    - show [sample]{"entity": "sample"}
+    - show [vitals]{"entity": "item"}
     - show the [menu]{"entity": "item"}
+    - show the [mini map]{"entity": "item"}
+    - show the [pin]{"entity": "pin"}
+    - show the [sample]{"entity": "sample"}
+    - show the [vitals]{"entity": "item"}
+    - Can you show the [menu]{"entity": "item"}
     - Can you show the [mini map]{"entity": "item"}
+    - Can you show the [pin]{"entity": "pin"}
+    - Can you show the [sample]{"entity": "sample"}
+    - Can you show the [vitals]{"entity": "item"}
+    - Please show the [menu]{"entity": "item"}
+    - Please show the [mini map]{"entity": "item"}
+    - Please show the [pin]{"entity": "pin"}
+    - Please show the [sample]{"entity": "sample"}
+    - Please show the [vitals]{"entity": "item"}
 
 - intent: hide
   examples: |
+    - hide [menu]{"entity": "item"}
+    - hide [mini map]{"entity": "item"}
+    - hide [vitals]{"entity": "item"}
+    - hide [pin]{"entity": "item"}
     - hide the [menu]{"entity": "item"}
+    - hide the [mini map]{"entity": "item"}
+    - hide the [vitals]{"entity": "item"}
+    - I need to hide the [pin]{"entity": "item"}
+    - I need to hide the [pin]{"entity": "pin"}
     - I need to hide the [mini map]{"entity": "item"}
+    - I need to hide the [menu]{"entity": "item"}
+    - I need to hide the [vitals]{"entity": "item"}
+    - I need to hide the [pin]{"entity": "pin"}
+    - Can you hide [menu]{"entity": "item"}
+    - Can you hide [mini map]{"entity": "item"}
+    - Can you hide [vitals]{"entity": "item"}
+    - Can you hide [pin]{"entity": "pin"}
 
 - intent: enter
   examples: |
@@ -125,13 +179,43 @@ nlu:
 
 - intent: set
   examples: |
-    - Set temperature [25]{"entity": "number"} degrees
-    - set fan on [18]{"entity": "number"} degrees
+    - Set temperature [60]{"entity": "number"} degrees
+    - Set temperature [61]{"entity": "number"} degrees
+    - Set temperature [62]{"entity": "number"} degrees
+    - Set temperature [63]{"entity": "number"} degrees
+    - Set temperature [64]{"entity": "number"} degrees
+    - Set temperature [65]{"entity": "number"} degrees
+    - Set temperature [66]{"entity": "number"} degrees
+    - Set temperature [67]{"entity": "number"} degrees
+    - Set temperature [68]{"entity": "number"} degrees
+    - Set temperature [69]{"entity": "number"} degrees
+    - Set temperature [70]{"entity": "number"} degrees
+    - Set temperature [71]{"entity": "number"} degrees
+    - Set temperature [72]{"entity": "number"} degrees
+    - Set temperature [73]{"entity": "number"} degrees
+    - Set temperature [74]{"entity": "number"} degrees
+    - Set temperature [75]{"entity": "number"} degrees
+    - Set temperature [76]{"entity": "number"} degrees
+    - Set temperature [77]{"entity": "number"} degrees
+    - Set temperature [78]{"entity": "number"} degrees
+    - Set temperature [79]{"entity": "number"} degrees
+    - Set temperature [80]{"entity": "number"} degrees
+    - set fan to [low]{"entity": "power"}
+    - set fan to [medium]{"entity": "power"}
+    - set fan to [high]{"entity": "power"}
 
 - intent: end
   examples: |
     - End [route]{"entity": "task"}
     - End [task]{"entity": "task"}
+    - End [geosampling]{"entity": "task"}
+    - Stop [route]{"entity": "task"}
+    - Stop [task]{"entity": "task"}
+    - Stop [geosampling]{"entity": "task"}
+    - Halt [route]{"entity": "task"}
+    - Halt [task]{"entity": "task"}
+    - Halt [geosampling]{"entity": "task"}
+    
 
 - intent: add
   examples: |
@@ -147,11 +231,19 @@ nlu:
   examples: |
     - Go [back]{"entity": "direction"}
     - Go [forward]{"entity": "direction"}
+    - Go [left]{"entity": "direction"}
+    - Go [right]{"entity": "direction"}
+    - Go [North]{"entity": "direction"}
+    - Go [South]{"entity": "direction"}
+    - Go [East]{"entity": "direction"}
+    - Go [West]{"entity": "direction"}
 
 - intent: query_status
   examples: |
     - What is my suit temperature?
     - What is my [heart rate]{"entity": "vital"}?
+    - What is my [oxygen level]{"entity": "vital"}?
+    - What is my [suit pressure]{"entity": "vital"}?
 
 - intent: map_reset
   examples: |
