@@ -56,11 +56,7 @@ class ExternalServiceClient:
         response = self.openai_client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=[
-                {"role": "system", "content":"""
-                    Given a sentence, you extract the rock color, rock location, and rock type in the following format
-                    {"color":"<color>", "location":"<location>", "type":"<type>"}
-                    Put null if the tag cannot be found in the sentence.
-                """},
+                {"role": "system", "content": prompt},
                 {"role": "user", "content": voice_command},
             ]
         )
@@ -68,3 +64,5 @@ class ExternalServiceClient:
         json_resp = json.loads(resp)
 
         return json_resp
+esc = ExternalServiceClient()
+esc.execute_command()

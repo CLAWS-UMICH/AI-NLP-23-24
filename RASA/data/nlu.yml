@@ -9,79 +9,47 @@ nlu:
     - Greetings
     - Good morning
 
-- intent: geosampling
+- intent: take
   examples: |
+    - Take a [photo]{"entity": "item"}
+    - Do an XRF [scan]{"entity": "item"}
+    - Do a [scan]{"entity": "item"}
+    - I would like to take a [scan]{"entity": "item"} right now
+    - I would like to take a [scan]{"entity": "item"} right now
+
+- intent: delete
+  examples: |
+    - Delete [task]{"entity": "task"}
+    - Remove [task]{"entity": "task"}
+    - Can you please delete the [photo]{"entity": "task"}
+    - Delete this [thing]{"entity": "task"} for me
+
+- intent: sample
+  examples: |
+    - View [sample]{"entity": "sample"}
+    - Open [sample]{"entity": "sample"}
+    - Take sample
     - I want to collect soil samples
     - How can I geosample here?
     - Help me with geosampling
     - Collect samples
     - Sample collection
 
-- intent: take
-  examples: |
-    - Take a photo
-    - Do an XRF scan
-    - Do a scan
-    - Capture 
-    - Scan
-
-- intent: delete
-  examples: |
-    - Delete [task]{"entity": "task"}
-    - Remove [task]{"entity": "task"}
-    - Delete [photo]{"entity": "photo"}
-    - Remove [photo]{"entity": "photo"}
-    - Delete [sample]{"entity": "sample"}
-    - Remove [sample]{"entity": "sample"}
-    - Delete [pin]{"entity": "pin"}
-    - Remove [pin]{"entity": "pin"}
-    - Can you delete [task]{"entity": "task"}
-    - Can you remove [task]{"entity": "task"}
-    - Can you delete [photo]{"entity": "photo"}
-    - Can you remove [photo]]{"entity": "photo"}
-    - Can you delete [sample]{"entity": "sample"}
-    - Can you remove [sample]{"entity": "sample"}
-    - Can you delete [pin]{"entity": "pin"}
-    - Can you remove [pin]{"entity": "pin"}
-    - Get rid of [task]{"entity": "task"}
-    - Get rid of [photo]{"entity": "photo"}
-    - Get rid of [sample]{"entity": "sample"}
-    - Get rid of [pin]{"entity": "pin"}
-
-- intent: sample
-  examples: |
-    - View [sample]{"entity": "sample"}
-    - Open [sample]{"entity": "sample"}
-    - Take [sample]{"entity": "sample"}
-    - See [sample]{"entity": "sample"}
-    - Obtain [sample]{"entity": "sample"}]
-
 - intent: pin
   examples: |
-    - [pin]{"entity": "pin"}
-    - View [pin]{"entity": "pin"}
-    - See [pin]{"entity": "pin"}
-    - Move [pin]{"entity": "pin"}
-
-- intent: on
-  examples: |
-    - Turn on fan
-    - Fan on
-    - Activate fan
-
-- intent: off
-  examples: |
-    - Turn off fan
-    - Fan off
-    - Deactivate fan
-
-- intent: temperature
-  examples: |
-    - What is the temperature in celcius?
-    - What is the temperature in [farenheit]?
-    - Temperature in farenheit
-    - Temperature in celcius
-    - Temperature
+    - Create a pin on the map
+    - Pin this location
+    - Put a pin
+    - Mark this spot
+    - Drop a pin here
+    - Save this location
+    - Remember this place
+    - Add to my map
+    - Tag this point
+    - Highlight this area
+    - Set a marker
+    - Designate this position
+    - Flag this location
 
 - intent: open
   examples: |
@@ -142,14 +110,16 @@ nlu:
     - show the [vitals]{"entity": "item"}
     - Can you show the [menu]{"entity": "item"}
     - Can you show the [mini map]{"entity": "item"}
-    - Can you show the [pin]{"entity": "pin"}
-    - Can you show the [sample]{"entity": "sample"}
-    - Can you show the [vitals]{"entity": "item"}
-    - Please show the [menu]{"entity": "item"}
-    - Please show the [mini map]{"entity": "item"}
-    - Please show the [pin]{"entity": "pin"}
-    - Please show the [sample]{"entity": "sample"}
-    - Please show the [vitals]{"entity": "item"}
+    - Display the [leaderboard]{"entity": "item"}
+    - Bring up the [settings]{"entity": "item"}
+    - I’d like to see the [scorecard]{"entity": "item"}
+    - Reveal the [top scores]{"entity": "item"}
+    - Present the [help guide]{"entity": "item"}
+    - Open the [user profile]{"entity": "item"}
+    - View [notifications]{"entity": "item"}
+    - Let’s check out the [achievements]{"entity": "item"}
+    - Access the [account details]{"entity": "item"}
+    - Unveil the [game stats]{"entity": "item"}
 
 - intent: hide
   examples: |
@@ -163,37 +133,17 @@ nlu:
     - I need to hide the [pin]{"entity": "item"}
     - I need to hide the [pin]{"entity": "pin"}
     - I need to hide the [mini map]{"entity": "item"}
-    - I need to hide the [menu]{"entity": "item"}
-    - I need to hide the [vitals]{"entity": "item"}
-    - I need to hide the [pin]{"entity": "pin"}
-    - Can you hide [menu]{"entity": "item"}
-    - Can you hide [mini map]{"entity": "item"}
-    - Can you hide [vitals]{"entity": "item"}
-    - Can you hide [pin]{"entity": "pin"}
-
-- intent: enter
-  examples: |
-    - enter [geo sampling mode]{"entity": "mode"}
-    - enter [navigation mode]{"entity": "mode"}
-    - enter [route planning mode]{"entity": "mode"}
-    - enter [uia egress mode]{"entity": "mode"}
-    - enter [airlock mode]{"entity": "mode"}
-    - I want to enter [navigation mode]{"entity": "mode"}
-    - I want to enter [geosampling mode]{"entity": "mode"}
-    - I want to enter [route planning mode]{"entity": "mode"}
-    - I want to enter [uia egress mode]{"entity": "mode"}
-    - I want to enter [airlock mode]{"entity": "mode"}
-    - Can we enter [route planning mode]{"entity": "mode"}
-    - Can we enter [geosampling mode]{"entity": "mode"}
-    - Can we enter [uia egress mode]{"entity": "mode"}
-    - Can we enter [airlock mode]{"entity": "mode"}
-    - Can we enter [navigation mode]{"entity": "mode"}
-    - Let's enter [airlock mode]{"entity": "mode"}
-    - Let's enter [navigation mode]{"entity": "mode"}
-    - Let's enter [uia egress mode]{"entity": "mode"}
-    - Let's enter [geosampling mode]{"entity": "mode"}
-    - Let's enter [route planning mode]{"entity": "mode"}
-
+    - Remove the [sidebar]{"entity": "item"} from view.”
+    - Make the [chat box]{"entity": "item"} disappear.
+    - I don’t want to see the [notifications]{"entity": "item"} anymore.
+    - Conceal the [status bar]{"entity": "item"}.
+    - Get rid of the [tool panel]{"entity": "item"}.
+    - Let the [scoreboard]{"entity": "item"} vanish.
+    - Clear the [advertisements]{"entity": "item"} off the screen.
+    - I’d like to not display the [friend list]{"entity": "item"}.
+    - Erase the [taskbar]{"entity": "item"} from sight.
+    - Withdraw the [navigation]{"entity": "item"} from the interface.
+  
 - intent: switch_mode
   examples: |
     - Switch to [geo sampling mode]{"entity": "mode_type"}
@@ -222,42 +172,19 @@ nlu:
     - I want to switch to [airlock mode]{"entity": "mode_type"}
     - I want to switch to [navigation mode]{"entity": "mode_type"}
     - Activate [uia egress mode]{"entity": "mode_type"}
-    - Activate [geo sampling mode]{"entity": "mode_type"}
-    - Activate [airlock mode]{"entity": "mode_type"}
-    - Activate [navigation mode]{"entity": "mode_type"}
-    - Activate [route planning mode]{"entity": "mode_type"}
+    - Change to [airlock mode]{"entity": "mode_type"}
+    - Move to [geo sample mode]{"entity": "mode_type"}
+    - enter [geo sampling mode]{"entity": "mode"}
+    - I want to enter [navigation mode]{"entity": "mode"}
+    - Can we enter [route planning mode]{"entity": "mode"}
+    - Switch to [uia egress mode]{"entity": "mode"}
+    - Let's enter [airlock mode]{"entity": "mode"}
+    - Activate [geo sample mode]{"entity": "mode"}
 
 - intent: complete
   examples: |
     - complete [task]{"entity": "object"}
-    - I need to complete the
-
-- intent: set
-  examples: |
-    - Set temperature [60]{"entity": "number"} degrees
-    - Set temperature [61]{"entity": "number"} degrees
-    - Set temperature [62]{"entity": "number"} degrees
-    - Set temperature [63]{"entity": "number"} degrees
-    - Set temperature [64]{"entity": "number"} degrees
-    - Set temperature [65]{"entity": "number"} degrees
-    - Set temperature [66]{"entity": "number"} degrees
-    - Set temperature [67]{"entity": "number"} degrees
-    - Set temperature [68]{"entity": "number"} degrees
-    - Set temperature [69]{"entity": "number"} degrees
-    - Set temperature [70]{"entity": "number"} degrees
-    - Set temperature [71]{"entity": "number"} degrees
-    - Set temperature [72]{"entity": "number"} degrees
-    - Set temperature [73]{"entity": "number"} degrees
-    - Set temperature [74]{"entity": "number"} degrees
-    - Set temperature [75]{"entity": "number"} degrees
-    - Set temperature [76]{"entity": "number"} degrees
-    - Set temperature [77]{"entity": "number"} degrees
-    - Set temperature [78]{"entity": "number"} degrees
-    - Set temperature [79]{"entity": "number"} degrees
-    - Set temperature [80]{"entity": "number"} degrees
-    - set fan to [low]{"entity": "power"}
-    - set fan to [medium]{"entity": "power"}
-    - set fan to [high]{"entity": "power"}
+    - I need to complete the thing
 
 - intent: end
   examples: |
@@ -287,40 +214,23 @@ nlu:
   examples: |
     - Go [back]{"entity": "direction"}
     - Go [forward]{"entity": "direction"}
-    - Go [left]{"entity": "direction"}
-    - Go [right]{"entity": "direction"}
-    - Go [North]{"entity": "direction"}
-    - Go [South]{"entity": "direction"}
-    - Go [East]{"entity": "direction"}
-    - Go [West]{"entity": "direction"}
+    - Take me to the [bottom]{"entity": "direction"}
+    - Navigate me to the crater A to crater B
+    - Can you tell me how to get to Iowa
+    - How do I get to this location
+    - Navigate from this place to the other place
+    - Return to [home]{"entity": "navigation_target"}
 
-- intent: query_status
-  examples: |
-    - temperature
-    - [heart rate]{"entity": "vital"}
-    - [oxygen level]{"entity": "vital"}
-    - [suit pressure]{"entity": "vital"}
-    - What is my suit temperature?
-    - What is my [heart rate]{"entity": "vital"}?
-    - What is my [oxygen level]{"entity": "vital"}?
-    - What is my [suit pressure]{"entity": "vital"}?
-
-- intent: map_reset
+- intent: map
   examples: |
     - Reset
     - Reset map
     - Can you reset the map?
     - I'd like to start over with the map
-
-- intent: map_add_pin
-  examples: |
     - Add pin
     - Add new pin
     - Place a pin on the map
     - Can you put a pin here?
-
-- intent: map_zoom
-  examples: |
     - Zoom [in]{"entity": "type"}
     - Zoom [out]{"entity": "type"}
     - Can we zoom [in]{"entity": "type"} closer?
@@ -328,56 +238,53 @@ nlu:
     - Please zoom [in] to map{"entity": "type"}
     - Please zoom [out] of map{"entity": "type"}
     - Zoom [out]{"entity": "type"} to see more of the area
-
-- intent: map_pan
-  examples: |
     - Pan left
     - Shift the map left
     - Can the map move to the left?
     - Pan the view to the left side
-
-- intent: map_move
-  examples: |
     - Move left
     - Shift my position left
     - Can we move the view left?
     - Navigate left on the map
-
-- intent: map_face
-  examples: |
     - Face north
     - Turn the map north
     - Can the map face north?
     - Orient the map to the north
-
-- intent: map_center
-  examples: |
     - Center my location
-    - Center geo sample [42]{"entity": "number"}
-    - Center pin [3]{"entity": "number"}
+    - Center geo sample 42
+    - Center pin 3
     - Focus on my current location
-    - Center on geo sample [15]{"entity": "number"}
-    - Can you center the map on pin [5]{"entity": "number"}?
-
-- intent: map_place_pin
-  examples: |
+    - Center on geo sample 15
+    - Can you center the map on pin 5
     - Place pin
     - Place new pin
     - Drop a pin here
     - Can we mark this spot with a pin?
-
-- intent: map_bigger
-  examples: |
     - Bigger
     - Make the map bigger
     - Can you enlarge the map?
     - I need a larger view of the map
-
-- intent: map_smaller
-  examples: |
     - Smaller
     - Make the map smaller
     - Can you reduce the map size?
     - I need a smaller view of the map
 
-
+- intent: what_is_my
+  examples: |
+    - What is my schedule for today?
+    - What is my current location?
+    - What is my heart rate right now?
+    - What is my step count for the day?
+    - What is my account balance?
+    - What is my data usage this month?
+    - What is my phone’s battery level?
+    - What is my most played song?
+    - What is my Uber rating?
+    - What is my order status from Amazon?
+    - What is my suit temperature?
+    - What is my [heart rate]{"entity": "vital"}?
+    - What is the temperature in celcius?
+    - What is the temperature in [farenheit]?
+    - Temperature in farenheit
+    - Temperature in celcius
+    - Temperature

@@ -10,7 +10,6 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-
 class Open(Action):
 
     def name(self) -> Text:
@@ -291,14 +290,9 @@ class WhatIsMy(Action):
         jsonstring = "{'command': 'what_is_my', 'entity':'" + entity + "'}" if entity is not None else "{'command': 'close'}"
         dispatcher.utter_message(text=jsonstring)
         return []
+
 """
-  - open
-  - close
-  - show
-  - hide
-  - enter
-  - mode
-  - complete
+- geosampling
   - take
   - delete
   - sample
@@ -306,10 +300,18 @@ class WhatIsMy(Action):
   - on
   - off
   - temperature
+  - open
+  - close
+  - show
+  - hide
+  - enter
+  - switch_mode
+  - complete
   - set
   - end
   - add
   - mute
-  - go
-  - what is my ?
+  - navigate
+  - query_status
+  - map
 """

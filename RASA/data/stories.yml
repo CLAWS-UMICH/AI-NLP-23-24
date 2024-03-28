@@ -8,157 +8,96 @@ stories:
   - intent: greet
   - action: utter_greet
 
-- story: Preform Geosample
-  steps:
-  - intent: geosampling
-  - action: utter_geosampling
-
-- story: Take a Something
+- story: Take a Photo
   steps:
   - intent: take
-  - action: action_take
+  - entities:
+    - item: "photo"
+  - action: utter_take
+
+- story: Take a XRF Scan
+  steps:
+  - intent: take
+    entities:
+    - item: "XRF scan"
+  - action: utter_take
 
 - story: Delete a Something
   steps:
   - intent: delete
-  - action: action_delete
+  - action: utter_delete
 
 - story: Sample a Something
   steps:
   - intent: sample
-  - action: action_sample
+  - action: utter_sample
 
 - story: Pin a Something
   steps:
   - intent: pin
-  - action: action_pin
-
-- story: turn it on
-  steps:
-  - intent: on
-  - action: action_on
-
-- story: turn it off
-  steps:
-  - intent: off
-  - action: action_off
-
-- story: What is the temp
-  steps:
-  - intent: temperature
-  - action: action_temperature
+  - action: utter_pin
 
 - story: Open letter
   steps:
   - intent: open
-  - action: action_open
+  - action: utter_open
 
 - story: Close letter
   steps:
   - intent: close
-  - action: action_close
+  - action: utter_close
 
 - story: Hide menu or minimap
   steps:
   - intent: hide
-  - action: action_hide
+  - action: utter_hide
 
 - story: Enter a Something
   steps:
   - intent: enter
-  - action: action_enter
+  - action: utter_enter
 
 - story: Switching the mode
   steps:
   - intent: switch_mode
-  - action: action_mode
+  - action: utter_mode
 
 - story: Take a Something
   steps:
   - intent: take
-  - action: action_take
+  - action: utter_take
 
 - story: Completing a Something
   steps:
   - intent: complete
-  - action: action_complete
-
-- story: Setting a Value
-  steps:
-  - intent: set
-  - action: action_set
+  - action: utter_complete
 
 - story: Ending a Task or Route
   steps:
   - intent: end
-  - action: action_end
+  - action: utter_end
 
 - story: Adding a Task or Detail
   steps:
   - intent: add
-  - action: action_add
+  - action: utter_add
 
 - story: Mute or Unmute
   steps:
   - intent: mute
-  - action: action_mute
+  - action: utter_mute
 
 - story: Navigation
   steps:
   - intent: navigate
   - action: utter_navigate
 
-- story: Querying Status
+- story: What is my
   steps:
   - intent: query_status
-  - action: utter_query_status
+  - action: utter_whatismy
 
-- story: Map Reset
+- story: Map
   steps:
-  - intent: map_reset
-  - action: utter_map_reset
-
-- story: Adding a Pin to the Map
-  steps:
-  - intent: map_add_pin
-  - action: utter_map_add_pin
-
-- story: Map Zoom
-  steps:
-  - intent: map_zoom
-  - action: utter_map_zoom
-
-- story: Map Pan
-  steps:
-  - intent: map_pan
-  - action: utter_map_pan
-
-- story: Map Move
-  steps:
-  - intent: map_move
-  - action: utter_map_move
-
-- story: Map Face Direction
-  steps:
-  - intent: map_face
-  - action: utter_map_face
-
-- story: Centering the Map
-  steps:
-  - intent: map_center
-  - action: utter_map_center
-
-- story: Placing a Pin on the Map
-  steps:
-  - intent: map_place_pin
-  - action: utter_map_place_pin
-
-- story: Making the Map Bigger
-  steps:
-  - intent: map_bigger
-  - action: utter_map_bigger
-
-- story: Making the Map Smaller
-  steps:
-  - intent: map_smaller
-  - action: utter_map_smaller
+  - intent: map
+  - action: utter_map
