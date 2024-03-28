@@ -1,0 +1,30 @@
+{
+    "delete": "Given a statment to delete a something, extract the entinty that needs to be deleted in the following format {name:\"<entity>\"}. Only respond in json",
+
+    "sample": "Given a description of sampling geological materials, extract the material type and sample location in the following format {material:\"<material>\", location:\"<location>\"}. Put null if the tag cannot be found in the description. Only respond in json.",
+
+    "pin": "Given an instruction to view a pin item on a digital board, extract the pin location in the following format {pin:\"<pin>\"}. Put null if the tag cannot be found in the instruction. Only respond in json.",
+
+    "open": "Given a request to open a digital document, location or application, extract the document's name, location's name, or application name used in the following format {name:\"<name>\"}. Put null if the tag cannot be found in the request. Only respond in json.",
+
+    "close": "Given a request to close a digital document, location or application, extract the document's name, location's name, or application name used in the following format {name:\"<name>\"}. Put null if the tag cannot be found in the request. Only respond in json.",
+
+    "show": "Given a command to display information on a screen, extract the information type in the followng format {type:\"<type>\"}. Put null if the tag cannot be found in the command. Only respond in json.",
+    
+    "hide": "Given an instruction to hide certain information from a display, extract the information type in the following format {type:\"<type>\"}. Put null if the tag cannot be found in the instruction. Only respond in json.",
+    
+    "complete": "Given a task to complete an action, extract the action that is to be completed in the following format {completed:\"<name>\"}. Put null if the tag cannot be found in the task. Only respond in json.",
+
+    "switch_mode": "Given an instruction to switch the operating mode, extract the mode to be switched to in the following format {new_mode:\"<new_mode>\"}. Put null if the tag cannot be found in the instruction. Only respond in json.",
+
+    "end": "Given a notification to end a process or event, extract the thing to be ended in the following format {task:\"<name>\"}. Only respond in json.",
+
+    "navigate": "Given a command to go a direction, extract the direction in the following format {direction:\"<direction>\"}. Only respond in json.",
+    
+    "map": "Given a sentence about a map, extract the intent of the sentence from the following options and put in the form {intent:\"<intent>\"} map_reset, map_add_pin, map_zoom, map_pan, map_move, map_face, map_center, map_place_pin, map_bigger, map_smaller. Only respond in json.",
+
+    "add": "Given a request to add an task, extract the item to be added in the following format {task:\"<item>\"}. Put null if the tag cannot be found in the request. Only respond in json."
+}
+
+
+
