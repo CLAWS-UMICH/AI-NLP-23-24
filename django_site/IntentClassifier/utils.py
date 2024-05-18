@@ -28,35 +28,26 @@ FEW_SHOT_PROMPTS = """
 class ExternalServiceClient:
     def __init__(self, base_url):
         self.base_url = base_url
-        self.openai_client = OpenAI(api_key="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")
+        print("Initializating LLM Connection to: ", self.base_url)
+        self.client = OpenAI(base_url=self.base_url, api_key="lm-studio")
+        self.model = "TheBloke/Mistral-7B-Instruct-v0.2-GGUF"
 
-    def make_request(self, endpoint, data=None):
-        response = self.openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "system", "content": "You are a helpful assistant."},
-                {"role": "user", "content": "Who won the world series in 2020?"},
-                {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
-                {"role": "user", "content": "Where was it played?"}
-            ]
-        )
-        return response.choices[0].message
-
-        # if response.status_code == 200:
-        #     return response.json()
-        # else:
-        #     # You might want to handle errors more gracefully
-        #     raise Exception(f"Request failed with status code {response.status_code}")
-
-    def execute_command(self, voice_command, prompt):
-        response = self.openai_client.chat.completions.create(
-            model="gpt-3.5-turbo",
+    def execute_command(self, voice_command, prompt="Hello world"):
+        print("Prompting LLM...")
+        response = self.client.chat.completions.create(
+            model=self.model,
             messages=[
                 {"role": "system", "content": prompt},
                 {"role": "user", "content": voice_command},
-            ]
+            ],
+            temperature=0.7
         )
         resp = response.choices[0].message.content
-        json_resp = json.loads(resp)
-
+                
+        try:
+            json_resp = json.loads(resp)
+        except json.JSONDecodeError as e:
+            print("Error parsing LLM-produced JSON")
+            json_resp = {"error": "bad json parse", "response": resp}
+        
         return json_resp
