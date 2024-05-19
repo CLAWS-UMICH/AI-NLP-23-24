@@ -20,5 +20,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('IntentClassifier/', include('IntentClassifier.urls')),  # Include the URLs from the myapp application
+    path('CVServer/', include('CVServer.urls')),
 ]
 
