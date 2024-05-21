@@ -6,7 +6,7 @@ url = 'http://localhost:8000/IntentClassifier/webhook/'  # Replace with your act
 
 # Example data to send in the POST request
 test_data = {
-    "command": ["geo sample gesample geosample get sample"],
+    "command": ["I want to collect soil samples"],
     "sender": "test_sender"
 }
 

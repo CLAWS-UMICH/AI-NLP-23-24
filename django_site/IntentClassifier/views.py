@@ -57,7 +57,8 @@ class TranscriptionView(View):
         result = self.model.transcribe(MP3_PATH)
         transcribed_text = result["text"]
 
-
+        response = incoming_message
+        response["text_from_VEGA"] = transcribed_text
         # RETURN:
         # "id": "[Astronaut_ID]",
         # "type": "AUDIO_PROCESSED",
@@ -131,6 +132,7 @@ class WebhookView(View):
             if response.status_code != 200:
                 # Return an error response
                 return JsonResponse({"error": "Error communicating with Rasa"}, status=response.status_code)    
+<<<<<<< Updated upstream
             if not BYPASS_LLM_TESTING:
                 if (classification in self.prompts):                
                     response = self.prompting.execute_command(voice_command, self.prompts[classification])
@@ -138,6 +140,26 @@ class WebhookView(View):
             else:
                 return JsonResponse(outs[classification], safe=False)
             return JsonResponse(classification, safe=False)
+=======
+            
+            if not BYPASS_LLM_TESTING and classification in self.prompts:                
+                response = self.prompting.execute_command(voice_command, self.prompts[classification])
+                return JsonResponse(response, safe=False)
+            
+            else:
+
+                class_map = {
+                    "sample": "Open_Geo",
+                    "map": "Open_Navigation"
+                }
+
+                command = []
+                if classification in class_map:
+                    command = [class_map[classification]]
+                
+
+                return JsonResponse({"text_from_VEGA": classification, "command": command}, safe=False)
+>>>>>>> Stashed changes
 
         else:
             classification = voice_command

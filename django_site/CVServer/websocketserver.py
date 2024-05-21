@@ -104,7 +104,7 @@ async def handle_client(websocket, path):
 
 print("Listening...")
 # start_server = websockets.serve(handle_client, "35.3.205.44", 5001)
-start_server = websockets.serve(handle_client, "35.3.70.154", 5001)
+start_server = websockets.serve(handle_client, "35.3.", 5001)
 
 asyncio.get_event_loop().run_until_complete(start_server)
 asyncio.get_event_loop().run_forever()

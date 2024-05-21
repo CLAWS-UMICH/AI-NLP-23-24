@@ -11,10 +11,13 @@ import json
 import cv2
 import numpy as np
 
+from IntentClassifier.utils import ExternalServiceClient
+
 # Create your views here.
 
 IMAGE_PATH = "temp_image.jpg"
 FITTED_MATRIX = np.load('./fit_raycast_matrix.npy')
+CAPTION_ENDPOINT = "http://172.16.183.135:2345/v1/"
 
 @method_decorator(csrf_exempt, name='dispatch')
 class BallsView(View):
@@ -66,10 +69,45 @@ class BallsView(View):
 
         return JsonResponse({"points": temp})
 
+# # Example: reuse your existing OpenAI setup
+# from openai import OpenAI
+
+# FEW_SHOT_PROMPTS = """
+#     Input: Record this rock that is blue and yellow 
+#     Output: {"color":"blue and yellow", "location":null, "type":null}
+#     Input: Geo Sampling blue lithium rock, weighs around 40 pounds
+#     Output: {"color":"blue", "location":null, "type":"lithium"}
+#     Input: Sample a basalt rock with a diameter of 10 inches
+#     Output: {"color":null, "location":null, "type":"basalt"}
+#     Input:Found basalt in Hadley Rille. 
+#     Output: {"color":null, "location":"Hadley Rille", "type":"basalt"}
+# """
+# # Point to the local server
+# client = OpenAI(base_url="http://localhost:1234/v1", api_key="not-needed")
+
+# completion = client.chat.completions.create(
+#   model="local-model", # this field is currently unused
+#   messages=[
+#     {"role": "system", "content": """
+#                     Given a sentence, you extract the rock color, rock location, and rock type in the following format
+#                     {"color":"<color>", "location":"<location>", "type":"<type>"}
+#                     Put null if the tag cannot be found in the sentence.
+#                     ###EXAMPLES###
+#                     """ +
+#                     FEW_SHOT_PROMPTS
+#                 },
+#     {"role": "user", "content": "Record a pink obsidian rock found by NASA astronauts on the lunar surface"}
+#   ],
+#   temperature=0,
+#   max_tokens=200,
+# )
+
+# print(completion.choices[0].message)
+
 @method_decorator(csrf_exempt, name='dispatch')
 class RockView(View):
     def __init__(self):
-        pass
+        self.prompting = ExternalServiceClient(CAPTION_ENDPOINT)
     
     def post(self, request):
 
@@ -105,7 +143,7 @@ class RockView(View):
         img = cv2.resize(img_wide, (1200, 1200))
 
         print("Starting Rock classifier pipeline...")
-        points, label = find_rocks(img)
+        points, label = find_rocks(img, generate_caption=True, prompting=self.prompting)
         temp = []
         for x,y in points:
             transform = np.dot(np.array([x,y,1]), FITTED_MATRIX)

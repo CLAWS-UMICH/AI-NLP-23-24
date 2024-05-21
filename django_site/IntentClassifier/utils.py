@@ -32,6 +32,40 @@ class ExternalServiceClient:
         self.client = OpenAI(base_url=self.base_url, api_key="lm-studio")
         self.model = "TheBloke/Mistral-7B-Instruct-v0.2-GGUF"
 
+    def execute_command_image(self, prompt, base64_image):
+        print("Prompting image llm...")
+        completion = self.client.chat.completions.create(
+            model="local-model", # not used
+            messages=[
+                {
+                "role": "system",
+                "content": "This is a chat between a user and an assistant. The assistant is describing an image saying only the most notable traits.",
+                },
+                {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{base64_image}"
+                        },
+
+                    },
+                ],
+                }
+            ],
+            max_tokens=100,
+            temperature=0,
+            stream=True
+        )
+        caption = ""
+        for chunk in completion:
+            if chunk.choices[0].delta.content:
+                caption = chunk.choices[0].delta.content
+                print(chunk.choices[0].delta.content, end="", flush=True)
+        return caption
+
     def execute_command(self, voice_command, prompt="Hello world"):
         print("Prompting LLM...")
         response = self.client.chat.completions.create(
