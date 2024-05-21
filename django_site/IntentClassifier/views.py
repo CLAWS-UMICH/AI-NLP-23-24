@@ -10,9 +10,10 @@ import os
 import base64
 import whisper
 import json
-
+from outsmap import outs
 
 BYPASS_RASA_TESTING = False
+BYPASS_LLM_TESTING = True
 MP3_PATH = "temp_audio.mp3"
 RASA_ENDPOINT = 'http://0.0.0.0:5005/webhooks/rest/webhook/'
 LLM_ENDPOINT = "http://192.168.1.160:1234/v1/"
@@ -72,7 +73,19 @@ class TranscriptionView(View):
         #             ...
         #     "[parameter n]"
         #     ]
-        return JsonResponse({"text_from_VEGA": transcribed_text})
+        payload = {
+            "sender": incoming_message.get("sender", "default"),  # You may want to specify the sender ID
+            "message": transcribed_text
+        }  
+        response = requests.post(RASA_ENDPOINT, json=payload)
+        classification = response.json()[0]['text'].replace("'", '"')
+
+        # Check if the request was successful
+        if response.status_code != 200:
+            # Return an error response
+            return JsonResponse({"error": "Error communicating with Rasa"}, status=response.status_code)
+        
+        return JsonResponse({"text_from_VEGA": transcribed_text, "command":[outs[classification]]})
 
 @method_decorator(csrf_exempt, name='dispatch')
 class WebhookView(View):
@@ -118,11 +131,12 @@ class WebhookView(View):
             if response.status_code != 200:
                 # Return an error response
                 return JsonResponse({"error": "Error communicating with Rasa"}, status=response.status_code)    
-            
-            if (classification in self.prompts):                
-                response = self.prompting.execute_command(voice_command, self.prompts[classification])
-                return JsonResponse(response, safe=False)
-            
+            if not BYPASS_LLM_TESTING:
+                if (classification in self.prompts):                
+                    response = self.prompting.execute_command(voice_command, self.prompts[classification])
+                    return JsonResponse(response, safe=False)
+            else:
+                return JsonResponse(outsclassification, safe=False)
             return JsonResponse(classification, safe=False)
 
         else:
