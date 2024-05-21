@@ -11,7 +11,7 @@ SERVER_URL = "http://localhost:8000"
 
 async def receive_response(websocket):
     async for message in websocket:
-        # print("MESSAGE", message)
+        print("MESSAGE", message)
         try:
             print("START: ", datetime.now())
             body = json.loads(message)

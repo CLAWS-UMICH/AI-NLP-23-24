@@ -1,0 +1,290 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - Hello
+    - Hi
+    - Hey
+    - Greetings
+    - Good morning
+
+- intent: take
+  examples: |
+    - Take a [photo]{"entity": "item"}
+    - Do an XRF [scan]{"entity": "item"}
+    - Do a [scan]{"entity": "item"}
+    - I would like to take a [scan]{"entity": "item"} right now
+    - I would like to take a [scan]{"entity": "item"} right now
+
+- intent: delete
+  examples: |
+    - Delete [task]{"entity": "task"}
+    - Remove [task]{"entity": "task"}
+    - Can you please delete the [photo]{"entity": "task"}
+    - Delete this [thing]{"entity": "task"} for me
+
+- intent: sample
+  examples: |
+    - View [sample]{"entity": "sample"}
+    - Open [sample]{"entity": "sample"}
+    - Take sample
+    - I want to collect soil samples
+    - How can I geosample here?
+    - Help me with geosampling
+    - Collect samples
+    - Sample collection
+
+- intent: pin
+  examples: |
+    - Create a pin on the map
+    - Pin this location
+    - Put a pin
+    - Mark this spot
+    - Drop a pin here
+    - Save this location
+    - Remember this place
+    - Add to my map
+    - Tag this point
+    - Highlight this area
+    - Set a marker
+    - Designate this position
+    - Flag this location
+
+- intent: open
+  examples: |
+    - open [letter]{"entity": "item"}
+    - open [message]{"entity": "item"}
+    - open [tasks]{"entity": "item"}
+    - open [vitals]{"entity": "item"}
+    - I want to open [tasks]{"entity": "item"}
+    - I want to open [letter]{"entity": "item"}
+    - I want to open [message]{"entity": "item"}
+    - I want to open [vitals]{"entity": "item"}
+    - Can you open [navigation]{"entity": "item"}
+    - Can you open [messages]{"entity": "item"}
+    - Can you open [tasks]{"entity": "item"}
+    - Can you open [letter]{"entity": "item"}
+    - Can you open [vitals]{"entity": "item"}
+    - Please open [messages]{"entity": "item"}
+    - Please open [navigation]{"entity": "item"}
+    - Please open [letter]{"entity": "item"}
+    - Please open [tasks]{"entity": "item"}
+    - Please open [vitals]{"entity": "item"}
+    - open [geo samples]{"entity": "item"}
+    - Let's look at [vitals]{"entity": "item"}
+    - Let's look at [letters]{"entity": "item"}
+    - Let's look at [message]{"entity": "item"}
+    - Let's look at [tasks]{"entity": "item"}
+    - Let's look at [navigation]{"entity": "item"}
+    - I need to see the [tasklist]{"entity": "item"}
+    - open [John's]{"entity": "astronaut_name"} [tasks]{"entity": "item"}
+    - Show me [John's]{"entity": "astronaut_name"} [vitals]{"entity": "item"}
+    - I need to open [equipment check]{"entity": "task_name"}
+  
+- intent: close
+  examples: |
+    - close [letter]{"entity": "item"}
+    - I want to close [tasks]{"entity": "item"}
+    - Can you close [navigation]{"entity": "item"}
+    - Please close [messages]{"entity": "item"}
+    - close [geo samples]{"entity": "item"}
+    - Let's close [vitals]{"entity": "item"}
+    - I need to close the [tasklist]{"entity": "item"}
+    - close [John's]{"entity": "astronaut_name"} [tasks]{"entity": "item"}
+    - Shut down [Anna's]{"entity": "astronaut_name"} [vitals]{"entity": "item"}
+    - I need to close [equipment check]{"entity": "task_name"}
+    - close all [apps]{"entity": "item_group"}
+
+- intent: show
+  examples: |
+    - show [menu]{"entity": "item"}
+    - show [mini map]{"entity": "item"}
+    - show [pin]{"entity": "pin"}
+    - show [sample]{"entity": "sample"}
+    - show [vitals]{"entity": "item"}
+    - show the [menu]{"entity": "item"}
+    - show the [mini map]{"entity": "item"}
+    - show the [pin]{"entity": "pin"}
+    - show the [sample]{"entity": "sample"}
+    - show the [vitals]{"entity": "item"}
+    - Can you show the [menu]{"entity": "item"}
+    - Can you show the [mini map]{"entity": "item"}
+    - Display the [leaderboard]{"entity": "item"}
+    - Bring up the [settings]{"entity": "item"}
+    - I’d like to see the [scorecard]{"entity": "item"}
+    - Reveal the [top scores]{"entity": "item"}
+    - Present the [help guide]{"entity": "item"}
+    - Open the [user profile]{"entity": "item"}
+    - View [notifications]{"entity": "item"}
+    - Let’s check out the [achievements]{"entity": "item"}
+    - Access the [account details]{"entity": "item"}
+    - Unveil the [game stats]{"entity": "item"}
+
+- intent: hide
+  examples: |
+    - hide [menu]{"entity": "item"}
+    - hide [mini map]{"entity": "item"}
+    - hide [vitals]{"entity": "item"}
+    - hide [pin]{"entity": "item"}
+    - hide the [menu]{"entity": "item"}
+    - hide the [mini map]{"entity": "item"}
+    - hide the [vitals]{"entity": "item"}
+    - I need to hide the [pin]{"entity": "item"}
+    - I need to hide the [pin]{"entity": "pin"}
+    - I need to hide the [mini map]{"entity": "item"}
+    - Remove the [sidebar]{"entity": "item"} from view.”
+    - Make the [chat box]{"entity": "item"} disappear.
+    - I don’t want to see the [notifications]{"entity": "item"} anymore.
+    - Conceal the [status bar]{"entity": "item"}.
+    - Get rid of the [tool panel]{"entity": "item"}.
+    - Let the [scoreboard]{"entity": "item"} vanish.
+    - Clear the [advertisements]{"entity": "item"} off the screen.
+    - I’d like to not display the [friend list]{"entity": "item"}.
+    - Erase the [taskbar]{"entity": "item"} from sight.
+    - Withdraw the [navigation]{"entity": "item"} from the interface.
+  
+- intent: switch_mode
+  examples: |
+    - Switch to [geo sampling mode]{"entity": "mode_type"}
+    - Change to [geo sampling mode]{"entity": "mode_type"}
+    - Switch to [navigation mode]{"entity": "mode_type"}
+    - Change to [navigation mode]{"entity": "mode_type"}
+    - Switch to [route planning mode]{"entity": "mode_type"}
+    - Change to [route planning mode]{"entity": "mode_type"}
+    - Switch to [uia egress mode]{"entity": "mode_type"}
+    - Change to [uia egress mode]{"entity": "mode_type"}
+    - Switch to [airlock mode]{"entity": "mode_type"}
+    - Change to [airlock mode]{"entity": "mode_type"}
+    - Move to [geo sampling mode]{"entity": "mode_type"}
+    - Move to [navigation mode]{"entity": "mode_type"}
+    - Move to [route planning mode]{"entity": "mode_type"}
+    - Move to [uia egress mode]{"entity": "mode_type"}
+    - Move to [airlock mode]{"entity": "mode_type"}
+    - Can we switch to [navigation mode]{"entity": "mode_type"}
+    - Can we switch to [geo sampling mode]{"entity": "mode_type"}
+    - Can we switch to [airlock mode]{"entity": "mode_type"}
+    - Can we switch to [uia egress mode]{"entity": "mode_type"}
+    - Can we switch to [route planning mode]{"entity": "mode_type"}
+    - I want to switch to [route planning mode]{"entity": "mode_type"}
+    - I want to switch to [geo sampling mode]{"entity": "mode_type"}
+    - I want to switch to [uia egress mode]{"entity": "mode_type"}
+    - I want to switch to [airlock mode]{"entity": "mode_type"}
+    - I want to switch to [navigation mode]{"entity": "mode_type"}
+    - Activate [uia egress mode]{"entity": "mode_type"}
+    - Change to [airlock mode]{"entity": "mode_type"}
+    - Move to [geo sample mode]{"entity": "mode_type"}
+    - enter [geo sampling mode]{"entity": "mode"}
+    - I want to enter [navigation mode]{"entity": "mode"}
+    - Can we enter [route planning mode]{"entity": "mode"}
+    - Switch to [uia egress mode]{"entity": "mode"}
+    - Let's enter [airlock mode]{"entity": "mode"}
+    - Activate [geo sample mode]{"entity": "mode"}
+
+- intent: complete
+  examples: |
+    - complete [task]{"entity": "object"}
+    - I need to complete the thing
+
+- intent: end
+  examples: |
+    - End [route]{"entity": "task"}
+    - End [task]{"entity": "task"}
+    - End [geosampling]{"entity": "task"}
+    - Stop [route]{"entity": "task"}
+    - Stop [task]{"entity": "task"}
+    - Stop [geosampling]{"entity": "task"}
+    - Halt [route]{"entity": "task"}
+    - Halt [task]{"entity": "task"}
+    - Halt [geosampling]{"entity": "task"}
+    
+
+- intent: add
+  examples: |
+    - Add [task]{"entity": "object"}
+    - Add new [task]{"entity": "object"}
+    - [meeting at 10am]{"entity": "details"} add [calendar]{"entity": "text_box_name"}
+
+- intent: mute
+  examples: |
+    - Mute
+    - Unmute
+
+- intent: navigate
+  examples: |
+    - Go [back]{"entity": "direction"}
+    - Go [forward]{"entity": "direction"}
+    - Take me to the [bottom]{"entity": "direction"}
+    - Navigate me to the crater A to crater B
+    - Can you tell me how to get to Iowa
+    - How do I get to this location
+    - Navigate from this place to the other place
+    - Return to [home]{"entity": "navigation_target"}
+
+- intent: map
+  examples: |
+    - Reset
+    - Reset map
+    - Can you reset the map?
+    - I'd like to start over with the map
+    - Add pin
+    - Add new pin
+    - Place a pin on the map
+    - Can you put a pin here?
+    - Zoom [in]{"entity": "type"}
+    - Zoom [out]{"entity": "type"}
+    - Can we zoom [in]{"entity": "type"} closer?
+    - Can we zoom [out]{"entity": "type"} further?
+    - Please zoom [in] to map{"entity": "type"}
+    - Please zoom [out] of map{"entity": "type"}
+    - Zoom [out]{"entity": "type"} to see more of the area
+    - Pan left
+    - Shift the map left
+    - Can the map move to the left?
+    - Pan the view to the left side
+    - Move left
+    - Shift my position left
+    - Can we move the view left?
+    - Navigate left on the map
+    - Face north
+    - Turn the map north
+    - Can the map face north?
+    - Orient the map to the north
+    - Center my location
+    - Center geo sample 42
+    - Center pin 3
+    - Focus on my current location
+    - Center on geo sample 15
+    - Can you center the map on pin 5
+    - Place pin
+    - Place new pin
+    - Drop a pin here
+    - Can we mark this spot with a pin?
+    - Bigger
+    - Make the map bigger
+    - Can you enlarge the map?
+    - I need a larger view of the map
+    - Smaller
+    - Make the map smaller
+    - Can you reduce the map size?
+    - I need a smaller view of the map
+
+- intent: what_is_my
+  examples: |
+    - What is my schedule for today?
+    - What is my current location?
+    - What is my heart rate right now?
+    - What is my step count for the day?
+    - What is my account balance?
+    - What is my data usage this month?
+    - What is my phone’s battery level?
+    - What is my most played song?
+    - What is my Uber rating?
+    - What is my order status from Amazon?
+    - What is my suit temperature?
+    - What is my [heart rate]{"entity": "vital"}?
+    - What is the temperature in celcius?
+    - What is the temperature in [farenheit]?
+    - Temperature in farenheit
+    - Temperature in celcius
+    - Temperature
