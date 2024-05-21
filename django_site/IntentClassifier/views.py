@@ -10,7 +10,7 @@ import os
 import base64
 import whisper
 import json
-from outsmap import outs
+from IntentClassifier.outsmap import outs
 
 BYPASS_RASA_TESTING = False
 BYPASS_LLM_TESTING = True
@@ -136,7 +136,7 @@ class WebhookView(View):
                     response = self.prompting.execute_command(voice_command, self.prompts[classification])
                     return JsonResponse(response, safe=False)
             else:
-                return JsonResponse(outsclassification, safe=False)
+                return JsonResponse(outs[classification], safe=False)
             return JsonResponse(classification, safe=False)
 
         else:

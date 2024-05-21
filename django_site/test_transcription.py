@@ -39,6 +39,6 @@ if __name__ == "__main__":
     endpoint_url = "http://localhost:8000/IntentClassifier/transcription/"
     
     # Replace with the path to your test MP3 file
-    audio_file_path = "./test2.mp3"
+    audio_file_path = "./test3.mp3"
     
     test_audio_transcription(endpoint_url, audio_file_path)

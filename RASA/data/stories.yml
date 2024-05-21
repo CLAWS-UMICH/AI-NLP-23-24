@@ -1,103 +1,48 @@
 version: "3.1"
 
-
 stories:
 
-- story: Greeting
+- story: Scrolling_Down
   steps:
-  - intent: greet
-  - action: utter_greet
+  - intent: Scroll_Down
+  - action: utter_Scroll_Down
 
-- story: Take a Photo
+- story: Closing
   steps:
-  - intent: take
-  - entities:
-    - item: "photo"
-  - action: utter_take
+  - intent: Close
+  - action: utter_Close
 
-- story: Take a XRF Scan
+- story: Canceling
   steps:
-  - intent: take
-    entities:
-    - item: "XRF scan"
-  - action: utter_take
+  - intent: Cancel
+  - action: utter_Cancel
 
-- story: Delete a Something
+- story: Selecting_Station
   steps:
-  - intent: delete
-  - action: utter_delete
+  - intent: Select_Station
+  - action: utter_Select_Station
 
-- story: Sample a Something
+- story: Selecting_Interest
   steps:
-  - intent: sample
-  - action: utter_sample
+  - intent: Select_Interest
+  - action: utter_Select_Interest
 
-- story: Pin a Something
+- story: Selecting_Geo
   steps:
-  - intent: pin
-  - action: utter_pin
+  - intent: Select_Geo
+  - action: utter_Select_Geo
 
-- story: Open letter
+- story: Opening_Tasks
   steps:
-  - intent: open
-  - action: utter_open
+  - intent: Open_Tasks
+  - action: utter_Open_Tasks
 
-- story: Close letter
+- story: Opening_Navigation
   steps:
-  - intent: close
-  - action: utter_close
+  - intent: Open_Navigation
+  - action: utter_Open_Navigation
 
-- story: Hide menu or minimap
+- story: Opening_Messaging
   steps:
-  - intent: hide
-  - action: utter_hide
-
-- story: Enter a Something
-  steps:
-  - intent: enter
-  - action: utter_enter
-
-- story: Switching the mode
-  steps:
-  - intent: switch_mode
-  - action: utter_mode
-
-- story: Take a Something
-  steps:
-  - intent: take
-  - action: utter_take
-
-- story: Completing a Something
-  steps:
-  - intent: complete
-  - action: utter_complete
-
-- story: Ending a Task or Route
-  steps:
-  - intent: end
-  - action: utter_end
-
-- story: Adding a Task or Detail
-  steps:
-  - intent: add
-  - action: utter_add
-
-- story: Mute or Unmute
-  steps:
-  - intent: mute
-  - action: utter_mute
-
-- story: Navigation
-  steps:
-  - intent: navigate
-  - action: utter_navigate
-
-- story: What is my
-  steps:
-  - intent: query_status
-  - action: utter_whatismy
-
-- story: Map
-  steps:
-  - intent: map
-  - action: utter_map
+  - intent: Open_Messaging
+  - action: utter_Open_Messaging
