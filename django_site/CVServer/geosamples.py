@@ -19,12 +19,12 @@ def find_rocks(img):
     img = result.orig_img
 
     # Filter rocks based on the confidence and size of their bounding box
-    rock_boxes = [box for box in result.boxes if result.names[box.cls[0].item()] == 'detect' and box.conf.item() >= 0.95]
+    rock_boxes = [box for box in result.boxes if result.names[box.cls[0].item()] == 'detect' and box.conf.item() >= 0.90]
     rock_boxes.sort(key=lambda box: (box.xyxy[0][2] - box.xyxy[0][0]) * (box.xyxy[0][3] - box.xyxy[0][1]), reverse=True)
     print(f"Total rocks detected with >= 90% accuracy: {len(rock_boxes)}")
 
     # Select top three largest rocks with >= 90% accuracy
-    top_3_rocks = rock_boxes[:1]
+    top_3_rocks = rock_boxes[:3]
 
     # Draw rectangle around each of the top three rocks
     for box in top_3_rocks:

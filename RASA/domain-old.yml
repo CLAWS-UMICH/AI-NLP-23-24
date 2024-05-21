@@ -1,0 +1,121 @@
+version: "3.1"
+
+intents:
+  - greet
+  - geosampling
+  - take
+  - delete
+  - sample
+  - pin
+  - open
+  - close
+  - show
+  - hide
+  - enter
+  - switch_mode
+  - complete
+  - end
+  - add
+  - mute
+  - navigate
+  - map
+  - what_is_my
+
+entities:
+  - item
+  - mode
+  - mode_type
+  - object
+  - direction
+  - vital
+  - number
+  - task
+  - details
+  - photo
+  - sample
+  - pin
+  - astronaut_name
+  - task_name
+  - item_group
+
+actions:
+  - utter_greet
+  - utter_geosampling
+  - utter_open
+  - utter_close
+  - utter_show
+  - utter_hide
+  - utter_take
+  - utter_delete
+  - utter_sample
+  - utter_pin
+  - utter_on
+  - utter_off
+  - utter_temperature
+  - utter_enter
+  - utter_mode
+  - utter_complete
+  - utter_end
+  - utter_add
+  - utter_mute
+  - utter_navigate
+  - utter_query_status
+  - utter_map
+  - utter_whatismy
+
+  # Add other utter_ actions if needed
+
+responses:
+  utter_greet:
+    - text: "Hello astronaut!"
+  utter_geosampling:
+    - text: "geosample"
+  utter_open:
+    - text: "open"
+  utter_close:
+    - text: "close"
+  utter_show:
+    - text: "show"
+  utter_hide:
+    - text: "hide"
+  utter_take:
+    - text: "take"
+  utter_delete:
+    - text: "delete"
+  utter_sample:
+    - text: "sample"
+  utter_pin:
+    - text: "pin"
+  utter_on:
+    - text: "on"
+  utter_off:
+    - text: "off"
+  utter_temperature:
+    - text: "temperature"
+  utter_enter:
+    - text: "enter"
+  utter_mode:
+    - text: "mode"
+  utter_complete:
+    - text: "complete"
+  utter_set:
+    - text: "set"
+  utter_end:
+    - text: "end"
+  utter_add:
+    - text: "add"
+  utter_mute:
+    - text: "mute"
+  utter_navigate:
+    - text: "navigate"
+  utter_query_status:
+    - text: "query_status"
+  utter_map:
+    - text: "map"
+  utter_whatismy:
+    - text: "what_is_my"
+  # Add other responses if needed
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

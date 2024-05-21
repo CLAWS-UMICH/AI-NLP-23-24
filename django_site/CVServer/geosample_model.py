@@ -8,7 +8,7 @@ model = None
 def load_model():
     global model
     print("Loading geosample model...\r")
-    model = YOLO('./CVServer/geosample_models/best.pt')  # Load a pretrained model    
+    model = YOLO('./CVServer/geosample_models/clawsisthebest.pt')  # Load a pretrained model    
     print("Model loaded successfully!")
 
 def get_model():
