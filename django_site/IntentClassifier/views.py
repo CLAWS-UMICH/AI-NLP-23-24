@@ -34,7 +34,8 @@ class TranscriptionView(View):
         # "data": {
         #     "base_64_audio": "[base_64_encoding_of_mp3_in_string_format]",
         #     "text_from_VEGA": "",
-        #     "command": []
+        #     "command": [],
+        #     "classify": true/false
         # }
         # }
         # print(request.body)
@@ -74,6 +75,14 @@ class TranscriptionView(View):
         #             ...
         #     "[parameter n]"
         #     ]
+
+        classify = False
+        if "classify" in incoming_message['data']:
+            classify = incoming_message['data']['classify']
+
+        if not classify:
+            return JsonResponse({"text_from_VEGA": transcribed_text, "command":[]})
+
         payload = {
             "sender": incoming_message.get("sender", "default"),  # You may want to specify the sender ID
             "message": transcribed_text
@@ -104,6 +113,7 @@ class WebhookView(View):
     def get(self, request, *args, **kwargs):
         # This GET method is just for testing purposes
         return JsonResponse({'status': 'ok'}, status=200)
+
     def post(self, request):
         # Parse the incoming JSON data
         try:
@@ -132,15 +142,6 @@ class WebhookView(View):
             if response.status_code != 200:
                 # Return an error response
                 return JsonResponse({"error": "Error communicating with Rasa"}, status=response.status_code)    
-<<<<<<< Updated upstream
-            if not BYPASS_LLM_TESTING:
-                if (classification in self.prompts):                
-                    response = self.prompting.execute_command(voice_command, self.prompts[classification])
-                    return JsonResponse(response, safe=False)
-            else:
-                return JsonResponse(outs[classification], safe=False)
-            return JsonResponse(classification, safe=False)
-=======
             
             if not BYPASS_LLM_TESTING and classification in self.prompts:                
                 response = self.prompting.execute_command(voice_command, self.prompts[classification])
@@ -159,7 +160,6 @@ class WebhookView(View):
                 
 
                 return JsonResponse({"text_from_VEGA": classification, "command": command}, safe=False)
->>>>>>> Stashed changes
 
         else:
             classification = voice_command

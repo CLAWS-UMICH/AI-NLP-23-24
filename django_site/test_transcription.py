@@ -19,7 +19,8 @@ def test_audio_transcription(endpoint_url, audio_file_path):
         "data": {
             "base_64_audio": base64_audio,
             "text_from_VEGA": "",
-            "command": []
+            "command": [],
+            "classify": True
         }
     }
     
