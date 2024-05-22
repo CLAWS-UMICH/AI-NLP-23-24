@@ -5,6 +5,8 @@ import copy
 from CVServer.geosample_model import get_model
 import base64
 
+from CVServer.captioningtest.color import get_color
+from CVServer.captioningtest.roughness import get_roughness
 # Load a model
 # model = YOLO('./CVServer/geosample_models/best.pt')  # Load a pretrained model
 
@@ -80,9 +82,14 @@ def find_rocks(img, generate_caption=False, prompting=None):
             cropped_img = img_no_label[cords[1]:cords[3], cords[0]:cords[2]]
             new_crop_filename = f"temp_rock_cropped_output.jpg"
             cv.imwrite(new_crop_filename, cropped_img)
+
+            roughness = "Rough" if get_roughness(new_crop_filename) > 0.2 else "Smooth"
+            col = get_color(new_crop_filename)
             
             base64_image = encode_image_to_base64(new_crop_filename)
             
-            caption = prompting.execute_command_image(CAPTIONING_PROMPT, base64_image)
+            #caption = prompting.execute_command_image(CAPTIONING_PROMPT, base64_image)
+
+            caption = f"The color of this rock is {col.lower()} and its texture is {roughness.lower()}"
 
     return [rock_com], caption

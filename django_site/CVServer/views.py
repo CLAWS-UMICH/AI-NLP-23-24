@@ -13,6 +13,7 @@ import numpy as np
 
 from IntentClassifier.utils import ExternalServiceClient
 
+
 # Create your views here.
 
 IMAGE_PATH = "temp_image.jpg"
@@ -57,6 +58,7 @@ class BallsView(View):
         
         img_wide = cv2.imread(IMAGE_PATH)
         img = cv2.resize(img_wide, (1200, 1200))
+        
 
         print("Starting LAB classifier pipeline...")
         points = lab_ballz_finder(img)
@@ -149,5 +151,5 @@ class RockView(View):
             transform = np.dot(np.array([x,y,1]), FITTED_MATRIX)
             coords = f"{transform[0]},{transform[1]}"
             temp.append(coords)
-
+        
         return JsonResponse({"points": temp, "label": label})
