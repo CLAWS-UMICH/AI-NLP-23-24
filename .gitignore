@@ -3,3 +3,4 @@ rasa_env/
 RASA/models/
 env/
 venv/
+django_site/rocktypeclassifier/data/
