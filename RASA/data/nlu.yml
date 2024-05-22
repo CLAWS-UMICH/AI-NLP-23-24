@@ -15,88 +15,154 @@ nlu:
     - Go down the page
 - intent: Scroll_Up
   examples: |
-      - Scroll up
-      - Go up
-      - I want to scroll up
-      - Please scroll up
-      - Slide up
-      - Can you move the screen up?
-      - Scroll upwards
-      - Scroll higher
-      - Move up
-      - Go up the page
+    - Scroll up
+    - Go up
+    - I want to scroll up
+    - Please scroll up
+    - Slide up
+    - Can you move the screen up?
+    - Scroll upwards
+    - Scroll higher
+    - Move up
+    - Go up the page
 - intent: Close
   examples: |
-      - Close this
-      - Exit
-      - Please close
-      - Can you close this?
-      - Close the tab?
+    - Close this
+    - Exit
+    - Please close
+    - Can you close this?
+    - Close the tab?
 - intent: Cancel
   examples: |
-      - Cancel this
-      - Stop this
-      - Please cancel
-      - Can you cancel this?
-      - Discontinue
+    - Cancel this
+    - Stop this
+    - Please cancel
+    - Can you cancel this?
+    - Discontinue
 - intent: Select_Station
   examples: |
-      - Select stations
-      - Choose stations
-      - Pick stations
-      - Choose stations
-      - I want to select stations
-      - I want to pick stations
-      - Select stations for me
-      - Set stations for me
-      - Can you select stations?
+    - Select stations
+    - Choose stations
+    - Pick stations
+    - Choose stations
+    - I want to select stations
+    - I want to pick stations
+    - Select stations for me
+    - Set stations for me
+    - Can you select stations?
 - intent: Select_Interest
   examples: |
-      - Select interest points
-      - Can you set interest points for me?
-      - I want to pick interest points
-      - Can you select interest points?
-      - Set this interest points for me
+    - Select interest points
+    - Can you set interest points for me?
+    - I want to pick interest points
+    - Can you select interest points?
+    - Set this interest points for me
 - intent: Select_Geo
   examples: |
-      - Select sample zones
-      - Pick sample zones
-      - Set sample zones
-      - Select sample zones for me
-      - Pick sample zones for me
-      - Set samples zones for me
-      - I want to select this sample zones
-      - Can you select sample zones?
+    - Select sample zones
+    - Pick sample zones
+    - Set sample zones
+    - Select sample zones for me
+    - Pick sample zones for me
+    - Set samples zones for me
+    - I want to select this sample zones
+    - Can you select sample zones?
+    - Select geo sample zones
+    - Pick geo sample zones
+    - Set geo sample zones
+    - Select geo samples zones for me
+    - Pick geo sample zones for me
+    - Set geo sample zones for me
 - intent: Open_Tasks
   examples: |
-      - Open task list
-      - Open tasks
-      - I want to see my tasks
-      - Let me see my task list
-      - Show my tasks
-      - Bring up my tasks
-      - Show my pending tasks
-      - View task list
-      - Display my tasks
+    - Open task list
+    - Open tasks
+    - I want to see my tasks
+    - Let me see my task list
+    - Show my tasks
+    - Bring up my tasks
+    - Show my pending tasks
+    - View task list
+    - Display my tasks
 - intent: Open_Navigation
   examples: |
-     - Open navigation
-     - Show navigation
-     - Can you open navigation?
-     - I want to see navigation
-     - Display navigation
-     - Let my access navigation
-     - Show me navigation
-     - Give me navigation
+    - Open navigation
+    - Show navigation
+    - Can you open navigation?
+    - I want to see navigation
+    - Display navigation
+    - Let my access navigation
+    - Show me navigation
+    - Give me navigation
 - intent: Open_Messaging
   examples: |
-      - Open my messages
-      - Can I see my messages?
-      - Open messaging
-      - Show messages
-      - Display messages
-      - Show my messages
-      - Bring up my messages
-      - View messages
-
-    
+    - Open my texts
+    - Can I see my texts?
+    - Show texts
+    - Display texts
+    - View texts
+    - Open my messages
+    - Can I see my messages?
+    - Open messaging
+    - Show messages
+    - Display messages
+    - Show my messages
+    - Bring up my messages
+    - View messages
+- intent: Open_Geo
+  examples: |
+    - Open geo samples
+    - Can I see my geo samples?
+    - View geo samples
+    - Bring up my geo samples
+    - Show geo samples
+    - Display geo samples
+    - Can I see my samples?
+    - View samples
+    - Bring up my samples
+    - Display samples
+    - Show samples
+- intent: Open_Vitals
+  examples: |
+    - Open vitals
+    - Can I see my vitals?
+    - View vitals
+    - Bring up my vitals
+    - Display vitals
+    - Show vitals
+- intent: Open_UIA
+  examples: |
+    - Open UIA
+    - Can I see UIA?
+    - View UIA
+    - Bring up UIA
+    - Display UIA
+    - Show UIA
+    - Open Egress
+    - Can I see Egress?
+    - Bring up Egress
+    - Display Egress
+    - Show Egress
+    - View Egress
+- intent: Add_New
+  examples: |
+    - Add new
+    - Create new
+    - Make new
+- intent: Open_3D_Map
+  examples: |
+    - Open 3D map
+    - 3D map
+    - Show 3D map
+    - Display 3D map
+    - Bring up the 3D map
+- intent: Navigate
+  examples: |
+    - I'm ready to navigate
+    - Navigate
+    - Can you navigate now?
+    - Ready to navigate
+    - Navigate now
+    - Navigate please
+    - Can you start navigation?
+    - Ready for navigation
